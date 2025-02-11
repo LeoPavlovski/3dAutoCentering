@@ -1,21 +1,28 @@
 <template>
   <v-card class="elevation-0" style="border-radius:0px;">
-    <v-layout height="100vh">
+    <v-layout height="100vh" width="100%">
       <v-app-bar color="black" style="border-radius:0 !important;">
         <v-app-bar-nav-icon variant="text" @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
+        <div class="d-flex align-center justify-space-between" style="width:100%;">
+          <div>
+            <span>3D Auto Centering</span>
+          </div>
+          <div>
+            <template v-if="$vuetify.display.smAndUp">
+              <router-link to="/home" link style="text-decoration:none; color:white; font-size:18px;" class="font-weight-bold">{{$t('navigation.home')}}</router-link>
+              <router-link to="/services" style="text-decoration:none;  color:white; font-size:18px;" class="mx-2 font-weight-bold">{{$t('navigation.services')}}</router-link>
+              <router-link to="/contact" style="text-decoration:none; color:white; font-size:18px;" class="mr-2 font-weight-bold">{{$t('navigation.contact')}}</router-link>
+              <router-link to="/gallery" style="text-decoration:none; color:white; font-size:18px;" class="mr-2 font-weight-bold">{{$t('navigation.gallery')}}</router-link>
+            </template>
+          </div>
+          <div>
+            <img @click="changeLanguage('mkd')"  :src="Macedonian" style="width:25px; height:25px; border-radius:50%; cursor:pointer;">
+            <img  @click="changeLanguage('en')" class="mx-2" :src="England" style="width:25px; height:25px; border-radius:50%; cursor:pointer">
+            <img @click="changeLanguage('al')" :src="Albanian" style="width:25px; margin-right:10px; height:25px; border-radius:50%; cursor:pointer">
+          </div>
+        </div>
 
-        <v-toolbar-title>3D Auto Centering</v-toolbar-title>
 
-        <v-spacer></v-spacer>
-
-        <template v-if="$vuetify.display.smAndUp">
-        <router-link to="/home" link style="text-decoration:none; color:white; font-size:18px;" class="font-weight-bold">{{$t('navigation.home')}}</router-link>
-        <router-link to="/services" style="text-decoration:none;  color:white; font-size:18px;" class="mx-2 font-weight-bold">{{$t('navigation.services')}}</router-link>
-        <router-link to="/contact" style="text-decoration:none; color:white; font-size:18px;" class="mr-2 font-weight-bold">{{$t('navigation.contact')}}</router-link>
-        </template>
-          <img @click="changeLanguage('mkd')"  :src="Macedonian" style="width:25px; height:25px; border-radius:50%; cursor:pointer;">
-          <img  @click="changeLanguage('en')" class="mx-2" :src="England" style="width:25px; height:25px; border-radius:50%; cursor:pointer">
-          <img @click="changeLanguage('al')" :src="Albanian" style="width:25px; margin-right:10px; height:25px; border-radius:50%; cursor:pointer">
       </v-app-bar>
 
       <v-navigation-drawer
@@ -67,6 +74,7 @@ export default {
       { title: 'navigation.services', path: '/services' },
       { title: 'navigation.contact', path: '/contact' },
       { title: 'navigation.about', path: '/about' },
+      { title: 'navigation.gallery', path: '/gallery' },
     ],
   }),
   methods: {

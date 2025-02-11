@@ -7,6 +7,7 @@ const messages = {
             services: 'Services',
             contact: 'Contact',
             about: 'About',
+            gallery:'Gallery'
         },
     },
     mkd: {
@@ -15,6 +16,7 @@ const messages = {
             services: 'Сервиси',
             contact: 'Контакт',
             about: 'За нас',
+            gallery:'Галерија'
         },
     },
     al: {
@@ -23,6 +25,7 @@ const messages = {
             services: 'Shërbime',
             contact: 'Kontakt',
             about: 'Rreth nesh',
+            gallery:'Galeria'
         },
     }
 };
