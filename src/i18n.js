@@ -17,6 +17,14 @@ const messages = {
             about: 'За нас',
         },
     },
+    al: {
+        navigation: {
+            home: 'Shtëpi',
+            services: 'Shërbime',
+            contact: 'Kontakt',
+            about: 'Rreth nesh',
+        },
+    }
 };
 
 const i18n = createI18n({
