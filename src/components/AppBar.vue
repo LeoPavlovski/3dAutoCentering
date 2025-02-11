@@ -9,10 +9,19 @@
         <v-spacer></v-spacer>
 
         <template v-if="$vuetify.display.smAndUp">
-        <router-link to="/home" link style="text-decoration:none; color:white; font-size:22px;" class="font-weight-bold">Home</router-link>
-        <router-link to="/services" style="text-decoration:none;  color:white; font-size:22px;" class="mx-2 font-weight-bold">Services</router-link>
-        <router-link to="/contact" style="text-decoration:none; color:white; font-size:22px;" class="mr-2 font-weight-bold">Contact</router-link>
+        <router-link to="/home" link style="text-decoration:none; color:white; font-size:18px;" class="font-weight-bold">Home</router-link>
+        <router-link to="/services" style="text-decoration:none;  color:white; font-size:18px;" class="mx-2 font-weight-bold">Services</router-link>
+        <router-link to="/contact" style="text-decoration:none; color:white; font-size:18px;" class="mr-2 font-weight-bold">Contact</router-link>
         </template>
+        <v-btn text @click="changeLanguage('mkd')">
+          <img :src="Macedonian" style="width:30px; height:30px;">
+        </v-btn>
+        <v-btn text @click="changeLanguage('en')">
+          <img :src="England" style="width:30px; height:30px;">
+        </v-btn>
+        <v-btn text @click="changeLanguage('alb')">
+          <img :src="Albanian" style="width:30px; height:30px;">
+        </v-btn>
       </v-app-bar>
 
       <v-navigation-drawer
@@ -29,7 +38,7 @@
               :to="item.path"
               link
           >
-            <v-list-item-title>{{ item.title }}</v-list-item-title>
+            <v-list-item-title>{{ $t(item.title) }}</v-list-item-title>
           </v-list-item>
         </v-list>
       </v-navigation-drawer>
@@ -42,25 +51,35 @@
 </template>
 
 <script>
+import i18n from "@/i18n";
+import alFlag from '/public/flags/al.svg'
+import mkFlag from '/public/flags/mk.svg'
+import gbFlag from '/public/flags/gb.svg'
+
 export default {
+  computed: {
+    i18n() {
+      return i18n
+    }
+  },
   data: () => ({
     drawer: false,
+    Albanian:alFlag,
+    Macedonian:mkFlag,
+    England:gbFlag,
     group: null,
     items: [
-      {
-        path:'/home',
-        title: 'Home',
-      },
-      {
-        path:'/services',
-        title: 'Services',
-      },
-      {
-        path:'/contact',
-        title: 'Contact',
-      },
+      { title: 'navigation.home', path: '/home' },
+      { title: 'navigation.services', path: '/services' },
+      { title: 'navigation.contact', path: '/contact' },
+      { title: 'navigation.about', path: '/about' },
     ],
   }),
+  methods: {
+    changeLanguage(value) {
+      this.$i18n.locale = value;
+    },
+  },
 
   watch: {
     group () {
