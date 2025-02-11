@@ -9,19 +9,13 @@
         <v-spacer></v-spacer>
 
         <template v-if="$vuetify.display.smAndUp">
-        <router-link to="/home" link style="text-decoration:none; color:white; font-size:18px;" class="font-weight-bold">Home</router-link>
-        <router-link to="/services" style="text-decoration:none;  color:white; font-size:18px;" class="mx-2 font-weight-bold">Services</router-link>
-        <router-link to="/contact" style="text-decoration:none; color:white; font-size:18px;" class="mr-2 font-weight-bold">Contact</router-link>
+        <router-link to="/home" link style="text-decoration:none; color:white; font-size:18px;" class="font-weight-bold">{{$t('navigation.home')}}</router-link>
+        <router-link to="/services" style="text-decoration:none;  color:white; font-size:18px;" class="mx-2 font-weight-bold">{{$t('navigation.services')}}</router-link>
+        <router-link to="/contact" style="text-decoration:none; color:white; font-size:18px;" class="mr-2 font-weight-bold">{{$t('navigation.contact')}}</router-link>
         </template>
-        <v-btn text @click="changeLanguage('mkd')">
-          <img :src="Macedonian" style="width:30px; height:30px;">
-        </v-btn>
-        <v-btn text @click="changeLanguage('en')">
-          <img :src="England" style="width:30px; height:30px;">
-        </v-btn>
-        <v-btn text @click="changeLanguage('alb')">
-          <img :src="Albanian" style="width:30px; height:30px;">
-        </v-btn>
+          <img @click="changeLanguage('mkd')"  :src="Macedonian" style="width:25px; height:25px; border-radius:50%; cursor:pointer;">
+          <img  @click="changeLanguage('en')" class="mx-2" :src="England" style="width:25px; height:25px; border-radius:50%; cursor:pointer">
+          <img @click="changeLanguage('al')" :src="Albanian" style="width:25px; margin-right:10px; height:25px; border-radius:50%; cursor:pointer">
       </v-app-bar>
 
       <v-navigation-drawer
