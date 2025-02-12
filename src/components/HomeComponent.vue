@@ -20,7 +20,7 @@
     <h1
         style="position: absolute; text-transform:uppercase; top: 79%; left: 50%; transform: translate(-50%, -50%); z-index: 2; color: white; font-size: 30px; font-weight: 400; text-align: center;"
     >
-     Automotive service
+     Automotive service nikola
     </h1>
   </div>
 

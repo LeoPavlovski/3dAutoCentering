@@ -148,7 +148,7 @@ export default {
 @keyframes rotate {
   from {
     transform: rotate(0deg);
-    filter: grayscale(1);
+    filter: grayscale(2);
   }
   to {
     transform: rotate(360deg);
