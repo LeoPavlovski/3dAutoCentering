@@ -9,19 +9,17 @@
           :src="Logo"
       >
       <h1 class="title">
-        3D AUTO
+       {{$t('navigation.auto')}}
       </h1>
       <h1 class="subtitle">
-        centering
+        {{$t('centering')}}
       </h1>
       <img
           style="width: 100%; height: 100vh; object-fit: cover;"
           src="https://www.shutterstock.com/image-photo/closeup-car-wheel-indoors-service-600nw-2103819539.jpg"
       >
-      <h1
-          class="desc"
-      >
-        Automotive service
+      <h1 class="desc">
+        {{$t('automotiveService')}}
       </h1>
     </div>
   </div>
@@ -73,7 +71,7 @@ Logo:logo,
   transform: translate(-50%, -50%);
   z-index: 2;
   color: white;
-  font-size: 30px;
+  font-size: 25px;
   font-weight: 400;
   text-align: center;
 }
@@ -99,16 +97,16 @@ Logo:logo,
 }
 
 @media(max-width:431px){
-.logo{
-  width:250px;
-}
+  .logo{
+    width:250px;
+  }
   .title{
-    font-size:40px;
+    font-size:39px;
     top:50%;
   }
   .subtitle{
-    font-size:60px;
-    top:57%;
+    font-size:55px;
+    top:55%;
   }
 }
 @media(max-width:426px){
@@ -117,11 +115,11 @@ Logo:logo,
     height:220px;
   }
   .title{
-    font-size:40px;
+    font-size:45px;
     top:50%;
   }
   .subtitle{
-    font-size:40px;
+    font-size:55px;
     top:55%;
   }
 }
@@ -136,6 +134,20 @@ Logo:logo,
   }
   .subtitle{
     font-size:30px;
+    top:55%;
+  }
+}
+@media(max-width:392px){
+  .logo{
+    width:180px;
+    height:180px;
+  }
+  .title{
+    font-size:43px;
+    top:50%;
+  }
+  .subtitle{
+    font-size:55px;
     top:55%;
   }
 }

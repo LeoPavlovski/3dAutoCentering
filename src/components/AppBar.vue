@@ -106,7 +106,7 @@
           absolute
           style="height:100vh;"
       >
-        <v-list>
+        <v-list height="300">
           <v-list-item
               v-for="(item, index) in iconsMenu"
               :key="index"
@@ -138,11 +138,11 @@
   </v-overlay>
   <v-footer v-if="!drawer" style="position:absolute;left:0;bottom:0; padding:0;margin:0; z-index:0; width:100%;">
     <div class="bg-orange-accent-4  w-100 align-center d-flex">
-      <strong style="font-size:14px; padding-left:10px;">Follow us on our socials!</strong>
+      <strong style="font-size:12px; padding-left:10px;">Follow us on our socials!</strong>
       <v-spacer></v-spacer>
-      <div style="font-size:12.5px">
+      <div v-if="this.$vuetify.display.mdAndUp" style="font-size:12.5px">
         <span>&copy;</span>
-        <span> 2025 - 3D Auto Centring Gostivar. All rights reserved.</span>
+        <span> 2025 - 3D Auto Centring Gostivar.</span>
       </div>
 
       <v-spacer></v-spacer>
