@@ -88,7 +88,7 @@
           :location="$vuetify.display.mobile ? 'bottom' : undefined"
           temporary
           absolute
-          style="height:100vh; z-index:1000;"
+          style="height:100vh;"
       >
         <v-list>
           <v-list-item
@@ -119,7 +119,7 @@
   >
     <img width="120" height="120" :src="logo" class="rotate-animation">
   </v-overlay>
-  <v-footer style="position:absolute;left:0;bottom:0; padding:0;margin:0; z-index:0; width:100%;">
+  <v-footer v-if="!drawer" style="position:absolute;left:0;bottom:0; padding:0;margin:0; z-index:0; width:100%;">
     <div class="bg-orange-accent-4 d-flex w-100 align-center">
       <strong style="font-size:14px; padding-left:10px;">Стапи во контакт преку</strong>
       <v-spacer></v-spacer>
