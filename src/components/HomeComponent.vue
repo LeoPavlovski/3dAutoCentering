@@ -19,7 +19,7 @@
           src="https://www.shutterstock.com/image-photo/closeup-car-wheel-indoors-service-600nw-2103819539.jpg"
       >
       <h1
-          style="position: absolute; text-transform:uppercase; top: 79%; left: 50%; transform: translate(-50%, -50%); z-index: 2; color: white; font-size: 30px; font-weight: 400; text-align: center;"
+          class="desc"
       >
         Automotive service
       </h1>
@@ -66,7 +66,17 @@ Logo:logo,
 .subtitle{
   position: absolute; text-transform:uppercase; top: 64%; left: 50%; transform: translate(-50%, -50%); z-index: 2; color: #f79f00; font-size: 120px; font-weight: bold; text-align: center;
 }
-/* Laptop Screen , Large Medium */
+.desc{
+  position: absolute;
+  text-transform:uppercase;
+  top: 79%; left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  color: white;
+  font-size: 30px;
+  font-weight: 400;
+  text-align: center;
+}
 @media(max-width:1440px) {
   .logo {
     width: 300px;
@@ -87,7 +97,20 @@ Logo:logo,
     top:60%;
   }
 }
-/* Phones L , M , S */
+
+@media(max-width:431px){
+.logo{
+  width:250px;
+}
+  .title{
+    font-size:40px;
+    top:50%;
+  }
+  .subtitle{
+    font-size:60px;
+    top:57%;
+  }
+}
 @media(max-width:426px){
   .logo{
     width:220px;
