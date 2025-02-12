@@ -6,16 +6,14 @@ const messages = {
             home: 'Home',
             services: 'Services',
             contact: 'Contact',
-            about: 'About',
             gallery:'Gallery'
         },
     },
     mkd: {
         navigation: {
-            home: 'Дома',
-            services: 'Сервиси',
+            home: 'Почетна',
+            services: 'Што нудиме',
             contact: 'Контакт',
-            about: 'За нас',
             gallery:'Галерија'
         },
     },
@@ -24,7 +22,6 @@ const messages = {
             home: 'Shtëpi',
             services: 'Shërbime',
             contact: 'Kontakt',
-            about: 'Rreth nesh',
             gallery:'Galeria'
         },
     }

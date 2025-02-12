@@ -114,6 +114,7 @@
     </v-layout>
   </v-card>
   <v-overlay
+      opacity="0.6"
       :model-value="overlay"
       class="align-center justify-center"
   >
@@ -190,14 +191,14 @@ export default {
       this.overlay = true;
       setTimeout(()=>{
         this.overlay = false;
-      },1000)
+      },1300)
     },
     delayedNavigation(path) {
       this.loaderAnimation();
       setTimeout(() => {
         this.currentPath = path;
         this.$router.push(path);
-      }, 1200); // Delay navigation by 1 second
+      }, 1000); // Delay navigation by 1 second
     }
   },
 
