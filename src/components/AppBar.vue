@@ -9,14 +9,42 @@
           </div>
           <div>
             <template v-if="$vuetify.display.smAndUp">
-              <router-link to="/home" link style="text-decoration:none; color:white; font-size:18px;" class="font-weight-bold">{{$t('navigation.home')}}</router-link>
-              <router-link to="/services" style="text-decoration:none;  color:white; font-size:18px;" class="mx-2 font-weight-bold">{{$t('navigation.services')}}</router-link>
-              <router-link to="/contact" style="text-decoration:none; color:white; font-size:18px;" class="mr-2 font-weight-bold">{{$t('navigation.contact')}}</router-link>
-              <router-link to="/gallery" style="text-decoration:none; color:white; font-size:18px;" class="mr-2 font-weight-bold">{{$t('navigation.gallery')}}</router-link>
+              <router-link
+                  :to="currentPath"
+                  @click.prevent="delayedNavigation('/home')"
+                  style="text-decoration:none; color:white; font-size:18px;"
+                  class="font-weight-bold"
+              >
+                {{$t('navigation.home')}}
+              </router-link>
+              <router-link
+                  :to="currentPath"
+                  @click.prevent="delayedNavigation('/services')"
+                  style="text-decoration:none; color:white; font-size:18px;"
+                  class="mx-2 font-weight-bold"
+              >
+                {{$t('navigation.services')}}
+              </router-link>
+              <router-link
+                  :to="currentPath"
+                  @click.prevent="delayedNavigation('/contact')"
+                  style="text-decoration:none; color:white; font-size:18px;"
+                  class="mr-2 font-weight-bold"
+              >
+                {{$t('navigation.contact')}}
+              </router-link>
+              <router-link
+                  :to="currentPath"
+                  @click.prevent="delayedNavigation('/gallery')"
+                  style="text-decoration:none; color:white; font-size:18px;"
+                  class="mr-2 font-weight-bold"
+              >
+                {{$t('navigation.gallery')}}
+              </router-link>
             </template>
           </div>
           <div>
-            <img @click="changeLanguage('mkd')"  :src="Macedonian" style="width:25px; height:25px; border-radius:50%; cursor:pointer;">
+            <img  @click="changeLanguage('mkd')"  :src="Macedonian" style="width:25px; height:25px; border-radius:50%; cursor:pointer;">
             <img  @click="changeLanguage('en')" class="mx-2" :src="England" style="width:25px; height:25px; border-radius:50%; cursor:pointer">
             <img @click="changeLanguage('al')" :src="Albanian" style="width:25px; margin-right:10px; height:25px; border-radius:50%; cursor:pointer">
           </div>
@@ -38,6 +66,7 @@
               :key="index"
               :to="item.path"
               link
+              @click="loaderAnimation"
           >
             <v-list-item-title>{{ $t(item.title) }}</v-list-item-title>
           </v-list-item>
@@ -49,6 +78,12 @@
 
     </v-layout>
   </v-card>
+  <v-overlay
+      :model-value="overlay"
+      class="align-center justify-center"
+  >
+    <img width="120" height="120" :src="logo" class="rotate-animation">
+  </v-overlay>
 </template>
 
 <script>
@@ -56,6 +91,8 @@ import i18n from "@/i18n";
 import alFlag from '/public/flags/al.svg'
 import mkFlag from '/public/flags/mk.svg'
 import gbFlag from '/public/flags/gb.svg'
+import Logo from '/public/Images/3dCenteringLogo.svg'
+
 
 export default {
   computed: {
@@ -64,6 +101,9 @@ export default {
     }
   },
   data: () => ({
+    currentPath: '',
+    logo: Logo,
+    overlay : false,
     drawer: false,
     Albanian:alFlag,
     Macedonian:mkFlag,
@@ -80,7 +120,21 @@ export default {
   methods: {
     changeLanguage(value) {
       this.$i18n.locale = value;
+      this.loaderAnimation();
     },
+    loaderAnimation () {
+      this.overlay = true;
+      setTimeout(()=>{
+        this.overlay = false;
+      },2000)
+    },
+    delayedNavigation(path) {
+      this.loaderAnimation();
+      setTimeout(() => {
+        this.currentPath = path;
+        this.$router.push(path);
+      }, 1500); // Delay navigation by 1 second
+    }
   },
 
   watch: {
@@ -90,3 +144,20 @@ export default {
   },
 }
 </script>
+<style scoped>
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+    filter: grayscale(1);
+  }
+  to {
+    transform: rotate(360deg);
+    filter: grayscale(0);
+  }
+}
+
+.rotate-animation {
+  animation: rotate 2s linear infinite;
+
+}
+</style>
