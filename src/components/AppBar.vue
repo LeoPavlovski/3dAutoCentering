@@ -129,8 +129,10 @@
           :key="icon"
           :icon="icon"
           class="mx-4"
-          size="small"
           variant="plain"
+          density="compact"
+          color="white"
+          @click="redirectToPage(icon)"
       ></v-btn>
     </div>
   </v-footer>
@@ -183,6 +185,19 @@ export default {
     console.log('Path : ' , this.$router.currentRoute.value.path);
   },
   methods: {
+    redirectToPage(item){
+      console.log('Item : ' , item);
+      const instagramProfile = 'https://www.instagram.com/3dcenteringgostivar/'
+      const facebookProfile = 'https://www.facebook.com/jovanoski.nikola'
+      if(item === 'mdi-facebook'){
+        //Open a facebook profile page
+        window.open(facebookProfile);
+      }
+      if(item === 'mdi-instagram'){
+        //Open an instagram page
+        window.open(instagramProfile);
+      }
+    },
     changeLanguage(value) {
       this.$i18n.locale = value;
       this.loaderAnimation();
