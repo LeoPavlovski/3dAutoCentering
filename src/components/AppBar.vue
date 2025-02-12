@@ -7,7 +7,7 @@
         <v-app-bar-nav-icon color="white" variant="text" @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
         <div class="d-flex align-center justify-space-between" style="width:100%;">
           <div>
-            <span style="color:white;">3D Auto Centering</span>
+            <span style="color:white; font-weight:bold;">3D Auto Centering</span>
           </div>
           <div>
             <template v-if="$vuetify.display.smAndUp">
@@ -71,6 +71,22 @@
               >
                 {{$t('navigation.gallery')}}
               </router-link>
+
+              <router-link
+                  :to="currentPath"
+                  @click.prevent="delayedNavigation('/prices')"
+                  style="text-decoration:none; color:white; font-size:18px; letter-spacing: 1.4px"
+                  class="mr-2 font-weight-bold mx-5"
+                  :style="{
+    textDecoration: $route.path === '/prices' ? 'underline' : 'none',
+    color: $route.path === '/prices' ? '#FF6D00' : 'white',
+    marginTop: '10px',
+    fontSize: '18px',
+    letterSpacing: '1.4px'
+  }"
+              >
+                {{$t('navigation.prices')}}
+              </router-link>
             </template>
           </div>
           <div>
@@ -121,8 +137,14 @@
     <img width="120" height="120" :src="logo" class="rotate-animation">
   </v-overlay>
   <v-footer v-if="!drawer" style="position:absolute;left:0;bottom:0; padding:0;margin:0; z-index:0; width:100%;">
-    <div class="bg-orange-accent-4 d-flex w-100 align-center">
-      <strong style="font-size:14px; padding-left:10px;">Стапи во контакт преку</strong>
+    <div class="bg-orange-accent-4  w-100 align-center d-flex">
+      <strong style="font-size:14px; padding-left:10px;">Follow us on our socials!</strong>
+      <v-spacer></v-spacer>
+      <div style="font-size:12.5px">
+        <span>&copy;</span>
+        <span> 2025 - 3D Auto Centring Gostivar. All rights reserved.</span>
+      </div>
+
       <v-spacer></v-spacer>
       <v-btn
           v-for="icon in icons"
@@ -168,6 +190,7 @@ export default {
       {icon: 'mdi-car-cog', name:'navigation.services' , path:'/service'},
       {icon:'mdi-card-account-phone' , name:'navigation.contact' , path:'/contact'},
       {icon:'mdi-car-multiple', name:'navigation.gallery' , path:'/gallery'},
+      {icon:'mdi-cash-multiple', name:'navigation.prices' , path:'/prices'},
     ],
     drawer: false,
     Albanian:alFlag,
@@ -179,6 +202,7 @@ export default {
       { title: 'navigation.services', path: '/services' },
       { title: 'navigation.contact', path: '/contact' },
       { title: 'navigation.gallery', path: '/gallery' },
+      { title: 'navigation.prices', path: '/prices' },
     ],
   }),
   mounted() {

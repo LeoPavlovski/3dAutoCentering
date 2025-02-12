@@ -55,6 +55,8 @@ extend the life of the tires.
   </div>
 </template>
 
+
+
 <style>
 .image{
 width: 100%; max-width: 500px; height: 300px; object-fit: cover;
@@ -101,5 +103,3 @@ color: black; background-color: white; padding: 20px; display: flex; flex-direct
   }
 }
 </style>
-<script setup>
-</script>
