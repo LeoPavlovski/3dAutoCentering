@@ -33,7 +33,9 @@ import logo from '/public/Images/3dCenteringLogo.svg'
 export default{
   data(){
     return{
-Logo:logo,
+      titleLetters: '3D AUTO'.split(''), // Split title into individual letters
+      subtitleLetters: 'Centering'.split(''), // Split subtitle into individual letters
+      Logo:logo,
       icons: [
         'mdi-facebook',
         'mdi-twitter',
@@ -42,58 +44,94 @@ Logo:logo,
       ],
     }
   },
-  methods:{
-
+  mounted() {
+    // Add mousemove event listener to track mouse position
+    document.addEventListener('mousemove', this.moveCircle);
   },
-  mounted(){
-    console.log('sokkodas' , this.$vuetify.display.name);
-  }
-}
+  methods: {
+    moveCircle(event) {
+      const circle = this.$refs.mouseCircle;
+      if (circle) {
+        // Update circle position to follow the mouse
+        circle.style.left = `${event.clientX}px`;
+        circle.style.top = `${event.clientY}px`;
+      }
+    },
+  },
+  beforeUnmount() {
+    // Clean up the event listener when the component is destroyed
+    document.removeEventListener('mousemove', this.moveCircle);
+  },
+};
 </script>
+
+
 <style>
-.logo{
-  position: absolute; top: 25%; left: 50%; transform: translate(-50%, -50%); z-index: 2; width: 300px; height: 300px;
+/* Mouse-following circle */
+
+/* Letter hover effect */
+.letter {
+  position: relative;
+  transition: color 0.3s ease-in-out;
+}
+
+.letter:hover {
+  color: white; /* Only the hovered letter will change color */
+}
+
+/* Existing styles */
+.logo {
+  position: absolute;
+  top: 25%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  width: 300px;
+  height: 300px;
   transition: ease-in-out 0.5s;
 }
-.logo:hover{
+
+.logo:hover {
   filter: grayscale(100%);
 }
-.title{
-  position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 2; color: #f79f00; font-size: 120px; font-weight: bold; text-align: center;
-}
-.subtitle{
-  position: absolute; text-transform:uppercase; top: 64%; left: 50%; transform: translate(-50%, -50%); z-index: 2; color: #f79f00; font-size: 120px; font-weight: bold; text-align: center;
-}
-.desc{
+
+.title {
   position: absolute;
-  text-transform:uppercase;
-  top: 79%; left: 50%;
+  top: 50%;
+  text-transform: uppercase;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  color: #f79f00;
+  font-size: 120px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.subtitle {
+  position: absolute;
+  text-transform: uppercase;
+  top: 64%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  color: #f79f00;
+  font-size: 120px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.desc {
+  position: absolute;
+  text-transform: uppercase;
+  top: 79%;
+  left: 50%;
   transform: translate(-50%, -50%);
   z-index: 2;
   color: white;
   font-size: 25px;
   font-weight: 400;
   text-align: center;
-}
-@media(max-width:1440px) {
-  .logo {
-    width: 300px;
-    height: 300px;
-  }
-}
-@media(max-width:1024px){
-  .logo{
-    width:250px;
-    height:250px;
-  }
-  .title{
-    font-size:80px;
-    top:50%;
-  }
-  .subtitle{
-    font-size:80px;
-    top:60%;
-  }
 }
 
 @media(max-width:431px){
