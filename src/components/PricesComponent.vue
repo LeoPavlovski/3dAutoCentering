@@ -1,6 +1,8 @@
 <template>
   <div class="image-container">
-    <v-img v-if="$vuetify.display.mdAndUp" :src="price" alt="3D Centering Prices" class="full-screen-image" />
+    <img v-if="$vuetify.display.mdAndUp && $i18n.locale === 'mkd'" :src="priceWebMacedonian" alt="3D Centering Prices" class="full-screen-image"  />
+    <img v-if="$vuetify.display.mdAndUp && $i18n.locale === 'en'" :src="priceWebEnglish" alt="3D Centering Prices" class="full-screen-image" />
+    <img v-if="$vuetify.display.mdAndUp && $i18n.locale === 'al'" :src="priceWebAlbanian" alt="3D Centering Prices" class="full-screen-image" />
     <img style="width:100%; margin-top:-150px;" v-if="$vuetify.display.smAndDown && $i18n.locale === 'al'" :src="priceMobileAlbanian">
     <img style="width:100%; margin-top:-150px;" v-if="$vuetify.display.smAndDown && $i18n.locale === 'en'" :src="priceMobileEnglish">
     <img style="width:100%; margin-top:-150px;" v-if="$vuetify.display.smAndDown && $i18n.locale === 'mkd'" :src="priceMobileMacedonian">
@@ -22,6 +24,9 @@ export default {
       priceMobileMacedonian: "/Images/Macedonian.svg",
       priceMobileAlbanian: "/Images/Albanian.svg",
       priceMobileEnglish: "/Images/English.svg",
+      priceWebMacedonian: "/Images/MacedonianPriceBig.svg",
+      priceWebEnglish: "/Images/EnglishPriceBig.svg",
+      priceWebAlbanian: "/Images/AlbanianPriceBig.svg",
     };
   },
   mounted(){
