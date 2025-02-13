@@ -8,6 +8,7 @@
       <img width="120" height="120" :src="logo" class="rotate-animation">
     </v-overlay>
       <app-bar></app-bar>
+    <footer-component></footer-component>
   </v-app>
 </template>
 
@@ -15,10 +16,14 @@
 
 import AppBar from "@/components/AppBar.vue";
 import Logo from "../public/Images/3dCenteringLogo.svg";
+import FooterComponent from "@/components/FooterComponent.vue";
 
 export default {
   name: 'App',
-  components: {AppBar},
+  components:{
+    FooterComponent,
+    AppBar,
+  },
 
   data: () => ({
     overlay : false,

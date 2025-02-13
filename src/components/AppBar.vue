@@ -136,31 +136,6 @@
   >
     <img width="120" height="120" :src="logo" class="rotate-animation">
   </v-overlay>
-  <v-footer v-if="!drawer" style="position:absolute;left:0;bottom:0; padding:0;margin:0; z-index:0; width:100%;">
-    <div class="bg-orange-accent-4  w-100 align-center d-flex">
-      <strong style="font-size:12px; padding-left:10px;">Follow us on our socials!</strong>
-      <v-spacer></v-spacer>
-      <div v-if="this.$vuetify.display.mdAndUp" style="font-size:12.5px">
-        <span>&copy;</span>
-        <span> 2025 - 3D Auto Centring Gostivar.</span>
-      </div>
-
-      <v-spacer></v-spacer>
-      <v-btn
-          v-for="icon in icons"
-          :key="icon"
-          :icon="icon"
-          class="mx-4"
-          variant="plain"
-          density="compact"
-          color="white"
-          @click="redirectToPage(icon)"
-      ></v-btn>
-    </div>
-  </v-footer>
-
-
-
 </template>
 
 <script>
