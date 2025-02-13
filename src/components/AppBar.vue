@@ -162,7 +162,7 @@ export default {
     ],
     iconsMenu:[
       {icon:'mdi-home', name:'navigation.home', path:'/home'},
-      {icon: 'mdi-car-cog', name:'navigation.services' , path:'/service'},
+      {icon: 'mdi-car-cog', name:'navigation.services' , path:'/services'},
       {icon:'mdi-card-account-phone' , name:'navigation.contact' , path:'/contact'},
       {icon:'mdi-car-multiple', name:'navigation.gallery' , path:'/gallery'},
       {icon:'mdi-cash-multiple', name:'navigation.prices' , path:'/prices'},
@@ -174,7 +174,7 @@ export default {
     group: null,
     items: [
       { title: 'navigation.home', path: '/home' },
-      { title: 'navigation.services', path: '/services' },
+      { title: 'navigation.services', path: '/service' },
       { title: 'navigation.contact', path: '/contact' },
       { title: 'navigation.gallery', path: '/gallery' },
       { title: 'navigation.prices', path: '/prices' },
