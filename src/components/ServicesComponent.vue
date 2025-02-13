@@ -3,25 +3,26 @@
     <div class="d-flex flex-column">
       <h1 style="color:white;" class="pa-5 title1" :class="$vuetify.display.smAndDown? 'text-center' : 'text-left'">What Are We Offering?</h1>
       <v-row class="rows d-flex" style="height:80vh; overflow:auto;">
-        <v-col :cols="$vuetify.display.smAndDown? 12 : 4" class="pa-0 ma-0">
-          <div class="pa-10">
-            <img
-                class="image"
-                src="https://img.freepik.com/free-photo/auto-mechanic-checking-car-engine_1303-14032.jpg"
-                style="border:10px solid white;"
-            >
-            <div class="container">
-              <h4 class="main-text" style="margin: 0 0 10px 0;">Maintaining your car
-              </h4>
-              <span style="font-size:16px;" class="description">
+        <v-col :cols="$vuetify.display.smAndDown? 12 : 4" :class="$vuetify.display.smAndDown? 'pr-9' : ''">
+          <div style="border:10px solid white; margin-left:25px;">
+            <div style="margin:5px;">
+              <img
+                  class="image"
+                  src="https://img.freepik.com/free-photo/auto-mechanic-checking-car-engine_1303-14032.jpg"
+              >
+              <div class="container">
+                <h4 class="main-text" style="margin: 0 0 10px 0;">Maintaining your car
+                </h4>
+                <span style="font-size:16px;" class="description">
              Regular maintenance of related partswith the centering, such as traps andsuspension system, is key to the correctoperation of the car.</span>
-          </div>
-
+              </div>
+            </div>
           </div>
         </v-col>
-        <v-col :cols="$vuetify.display.smAndDown? 12 : 4" class="pa-0 ma-0">
-          <div class="pa-10">
-            <img  style="border:10px solid white;" class="image" src="https://www.3dautocenter.com/uploads/7/2/7/0/72709373/auto-electrical-diagnostics_orig.jpg">
+        <v-col :cols="$vuetify.display.smAndDown? 12 : 4" :class="$vuetify.display.smAndDown? 'pr-9 pl-9' : ''">
+          <div style="border:10px solid white;">
+            <div style="margin:5px;">
+            <img  class="image" src="https://www.3dautocenter.com/uploads/7/2/7/0/72709373/auto-electrical-diagnostics_orig.jpg">
             <div
                 class="container"
             >
@@ -31,13 +32,14 @@
       </span>
           </div>
           </div>
+          </div>
         </v-col>
-        <v-col :cols="$vuetify.display.smAndDown? 12 : 4" class="pa-0 ma-0">
-          <div class="pa-10">
+        <v-col :cols="$vuetify.display.smAndDown? 12 : 4" :class="$vuetify.display.smAndDown? 'pr-9 pl-9' : ''">
+          <div style="border:10px solid white;">
+            <div style="margin:5px;">
             <img
                 class="image"
                 src="https://roskillauto.co.nz/wp-content/uploads/2021/11/20211123_123348-1024x461.jpeg"
-                style="border:10px solid white;"
             >
             <div
                 class="container"
@@ -45,6 +47,7 @@
               <h4 class="main-text" style="margin: 0 0 10px 0;">Tire change</h4>
               <span style="font-size:16px;" class="description">Changing and balancing tires for safety andcomfortable ride. The properly balanced onestires improve handling andextend the life of the tires.
       </span>
+          </div>
           </div>
           </div>
         </v-col>
@@ -66,17 +69,33 @@ export default{
 </script>
 <style>
 .image{
-width: 100%; max-width: 500px; height: 300px; object-fit: cover;
+  border-top-left-radius:0px; border-top-right-radius:0px;
+width: 100%; max-width: 500px; height: 470px; object-fit: cover;
+  transition:0.5s;
+  filter:grayscale(0);
+}
+.image:hover{
+  filter:grayscale(1);
+  transform:scale(.95);
 }
 .container{
   border:4px solid white;
-color: black; background-color: white; padding: 10px; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; width: 100%; max-width: 500px; height: 150px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); margin-top: 0;
+color: black; background-color: white; padding: 10px; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; width: 100%; max-width: 500px; height: 150px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); margin-top: 1px;
 }
 .main-text{
   font-weight:700;
 }
 .description{
   font-size:10px;
+}
+@media(max-width:2500px){
+  .image{
+    width:100%;
+    max-width:1000px;
+  }
+  .container{
+    max-width:1000px;
+  }
 }
 @media(max-width:1024px){
 .main-text{
