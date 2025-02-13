@@ -17,12 +17,12 @@
                   style="text-decoration:none; color:white; font-size:18px;"
                   class="font-weight-bold mx-5"
                   :style="{
-    textDecoration: $route.path === '/home' ? 'underline' : 'none',
-    color: $route.path === '/home' ? '#FF6D00' : 'white',
-    marginTop: '10px',
-    fontSize: '18px',
-    letterSpacing: '1.4px'
-  }"
+                  textDecoration: $route.path === '/home' ? 'underline' : 'none',
+                  color: $route.path === '/home' ? '#FF6D00' : 'white',
+                  marginTop: '10px',
+                  fontSize: '18px',
+                  letterSpacing: '1.4px'
+                  }"
               >
                 {{$t('navigation.home')}}
               </router-link>
@@ -32,11 +32,11 @@
                   style="text-decoration:none; color:white; font-size:18px; letter-spacing: 1.4px"
                   class="mx-2 font-weight-bold mx-5"
                   :style="{
-    textDecoration: $route.path === '/services' ? 'underline' : 'none',
-    color: $route.path === '/services' ? '#FF6D00' : 'white',
-    marginTop: '10px',
-    fontSize: '18px',
-    letterSpacing: '1.4px'
+                  textDecoration: $route.path === '/services' ? 'underline' : 'none',
+                  color: $route.path === '/services' ? '#FF6D00' : 'white',
+                  marginTop: '10px',
+                  fontSize: '18px',
+                  letterSpacing: '1.4px'
   }"
               >
                 {{$t('navigation.services')}}
@@ -47,11 +47,11 @@
                   style="text-decoration:none; color:white; font-size:18px; letter-spacing: 1.4px"
                   class="mr-2 font-weight-bold mx-5"
                   :style="{
-    textDecoration: $route.path === '/contact' ? 'underline' : 'none',
-    color: $route.path === '/contact' ? '#FF6D00' : 'white',
-    marginTop: '10px',
-    fontSize: '18px',
-    letterSpacing: '1.4px'
+                  textDecoration: $route.path === '/contact' ? 'underline' : 'none',
+                  color: $route.path === '/contact' ? '#FF6D00' : 'white',
+                  marginTop: '10px',
+                  fontSize: '18px',
+                  letterSpacing: '1.4px'
   }"
               >
                 {{$t('navigation.contact')}}
@@ -62,11 +62,11 @@
                   style="text-decoration:none; color:white; font-size:18px; letter-spacing: 1.4px"
                   class="mr-2 font-weight-bold mx-5"
                   :style="{
-    textDecoration: $route.path === '/gallery' ? 'underline' : 'none',
-    color: $route.path === '/gallery' ? '#FF6D00' : 'white',
-    marginTop: '10px',
-    fontSize: '18px',
-    letterSpacing: '1.4px'
+                  textDecoration: $route.path === '/gallery' ? 'underline' : 'none',
+                  color: $route.path === '/gallery' ? '#FF6D00' : 'white',
+                  marginTop: '10px',
+                  fontSize: '18px',
+                  letterSpacing: '1.4px'
   }"
               >
                 {{$t('navigation.gallery')}}
@@ -78,11 +78,11 @@
                   style="text-decoration:none; color:white; font-size:18px; letter-spacing: 1.4px"
                   class="mr-2 font-weight-bold mx-5"
                   :style="{
-    textDecoration: $route.path === '/prices' ? 'underline' : 'none',
-    color: $route.path === '/prices' ? '#FF6D00' : 'white',
-    marginTop: '10px',
-    fontSize: '18px',
-    letterSpacing: '1.4px'
+                  textDecoration: $route.path === '/prices' ? 'underline' : 'none',
+                  color: $route.path === '/prices' ? '#FF6D00' : 'white',
+                  marginTop: '10px',
+                  fontSize: '18px',
+                  letterSpacing: '1.4px'
   }"
               >
                 {{$t('navigation.prices')}}
