@@ -106,7 +106,7 @@
           absolute
           style="height:100vh;"
       >
-        <v-list height="300">
+        <v-list height="400">
           <v-list-item
               v-for="(item, index) in iconsMenu"
               :key="index"
