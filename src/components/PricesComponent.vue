@@ -1,18 +1,32 @@
 <template>
   <div class="image-container">
     <v-img v-if="$vuetify.display.mdAndUp" :src="price" alt="3D Centering Prices" class="full-screen-image" />
-    <img style="width:100%; margin-top:-150px;" v-if="$vuetify.display.smAndDown" :src="priceMobile">
+    <img style="width:100%; margin-top:-150px;" v-if="$vuetify.display.smAndDown && $i18n.locale === 'al'" :src="priceMobileAlbanian">
+    <img style="width:100%; margin-top:-150px;" v-if="$vuetify.display.smAndDown && $i18n.locale === 'en'" :src="priceMobileEnglish">
+    <img style="width:100%; margin-top:-150px;" v-if="$vuetify.display.smAndDown && $i18n.locale === 'mkd'" :src="priceMobileMacedonian">
   </div>
 </template>
 
 <script>
+import i18n from "@/i18n";
+
 export default {
+  computed: {
+    i18n() {
+      return i18n
+    }
+  },
   data() {
     return {
       price: "/Images/3dCenteringPrices.svg",
-      priceMobile: "/Images/Cenovnik2.svg",
+      priceMobileMacedonian: "/Images/Macedonian.svg",
+      priceMobileAlbanian: "/Images/Albanian.svg",
+      priceMobileEnglish: "/Images/English.svg",
     };
   },
+  mounted(){
+    console.log('asiidijd' ,this.$i18n.locale);
+  }
 };
 </script>
 

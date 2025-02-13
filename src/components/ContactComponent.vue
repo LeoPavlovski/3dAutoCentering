@@ -30,20 +30,12 @@ export default {
 </script>
 
 <style scoped>
-.content {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-}
 
 .item {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 50vh; /* Ensures equal height */
+  height: 60vh; /* Ensures equal height */
 }
 
 .full-content {
@@ -54,5 +46,13 @@ export default {
   aspect-ratio: 16/9; /* Maintains aspect ratio */
 }
 
-/* Responsive adjustments */
+@media(max-width:1024px){
+  .full-content{
+    width:100%;
+    height:75%;
+
+  }
+}
+
+
 </style>
