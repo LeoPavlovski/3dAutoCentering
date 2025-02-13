@@ -1,48 +1,54 @@
 <template>
   <div>
     <div style="position: relative;">
+      <!-- Overlay -->
       <div
-          style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.5);   z-index: 1;">
+          style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.5); z-index: 1;">
       </div>
-      <img
-          class="logo"
-          :src="Logo"
-      >
-      <h1 class="title">
-       {{$t('navigation.auto')}}
+
+      <!-- Logo -->
+      <img class="logo" :src="Logo" />
+
+      <!-- Title with individual letters -->
+      <h1 class="title" style="cursor: default">
+        <span v-for="(letter, index) in titleLetters" :key="'title-' + index" class="letter">
+          {{ letter }}
+        </span>
       </h1>
-      <h1 class="subtitle">
-        {{$t('centering')}}
+
+      <!-- Subtitle with individual letters -->
+      <h1 class="subtitle" style="cursor: default">
+        <span v-for="(letter, index) in subtitleLetters" :key="'subtitle-' + index" class="letter">
+          {{ letter }}
+        </span>
       </h1>
+
+      <!-- Background Image -->
       <img
           style="width: 100%; height: 100vh; object-fit: cover;"
           src="https://www.shutterstock.com/image-photo/closeup-car-wheel-indoors-service-600nw-2103819539.jpg"
-      >
+      />
+
+      <!-- Description -->
       <h1 class="desc">
-        {{$t('automotiveService')}}
+        {{ $t('automotiveService') }}
       </h1>
+
     </div>
   </div>
-
-
-
 </template>
 
+
 <script>
-import logo from '/public/Images/3dCenteringLogo.svg'
-export default{
-  data(){
-    return{
+import logo from '/public/Images/3dCenteringLogo.svg';
+
+export default {
+  data() {
+    return {
+      Logo: logo,
       titleLetters: '3D AUTO'.split(''), // Split title into individual letters
       subtitleLetters: 'Centering'.split(''), // Split subtitle into individual letters
-      Logo:logo,
-      icons: [
-        'mdi-facebook',
-        'mdi-twitter',
-        'mdi-linkedin',
-        'mdi-instagram',
-      ],
-    }
+    };
   },
   mounted() {
     // Add mousemove event listener to track mouse position
@@ -65,10 +71,7 @@ export default{
 };
 </script>
 
-
 <style>
-/* Mouse-following circle */
-
 /* Letter hover effect */
 .letter {
   position: relative;
@@ -134,6 +137,27 @@ export default{
   text-align: center;
 }
 
+@media(max-width:1440px) {
+  .logo {
+    width: 300px;
+    height: 300px;
+  }
+}
+@media(max-width:1024px){
+  .logo{
+    width:250px;
+    height:250px;
+  }
+  .title{
+    font-size:80px;
+    top:50%;
+  }
+  .subtitle{
+    font-size:80px;
+    top:60%;
+  }
+}
+
 @media(max-width:431px){
   .logo{
     width:250px;
@@ -181,11 +205,11 @@ export default{
     height:180px;
   }
   .title{
-    font-size:35px;
+    font-size:43px;
     top:50%;
   }
   .subtitle{
-    font-size:50px;
+    font-size:55px;
     top:55%;
   }
 }
