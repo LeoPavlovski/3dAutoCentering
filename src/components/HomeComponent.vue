@@ -143,11 +143,11 @@ Logo:logo,
     height:180px;
   }
   .title{
-    font-size:43px;
+    font-size:35px;
     top:50%;
   }
   .subtitle{
-    font-size:55px;
+    font-size:50px;
     top:55%;
   }
 }
