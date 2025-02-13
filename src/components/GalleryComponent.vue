@@ -56,6 +56,7 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-top:-50px;
 }
 
 .car-image {
