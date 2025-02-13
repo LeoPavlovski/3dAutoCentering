@@ -1,45 +1,48 @@
 <template>
   <div class="carousel__wrapper">
-    <Carousel v-bind="config">
-      <Slide v-for="image in images" :key="image.id">
+    <swiper
+        :modules="[Autoplay, Navigation, Pagination]"
+        :slides-per-view="1"
+        :space-between="10"
+        :loop="true"
+        :autoplay="{ delay: 3000, disableOnInteraction: false }"
+        :navigation="true"
+        :breakpoints="{
+        480: { slidesPerView: 1.2 },
+        768: { slidesPerView: 2 },
+        1024: { slidesPerView: 3 }
+      }"
+    >
+      <swiper-slide v-for="image in images" :key="image.id">
         <img :src="image.url" alt="Car Image" class="car-image" />
-      </Slide>
-
-      <template #addons>
-        <Navigation />
-      </template>
-    </Carousel>
+      </swiper-slide>
+    </swiper>
   </div>
 </template>
 
 <script>
-import "vue3-carousel/dist/carousel.css";
-import { Carousel, Slide, Navigation } from "vue3-carousel";
+import { Swiper, SwiperSlide } from "swiper/vue";
+import { Autoplay, Navigation, Pagination } from "swiper/modules";
+
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
 
 export default {
   components: {
-    Carousel,
-    Slide,
-    Navigation,
+    Swiper,
+    SwiperSlide,
+  },
+  setup() {
+    return { Autoplay, Navigation, Pagination };
   },
   data() {
     return {
       images: Array.from({ length: 15 }, (_, index) => ({
         id: index + 1,
-        url: `/Images/car${index + 1}.jpeg`, // Use your car images
+        url: `/Images/car${index + 1}.jpeg`,
       })),
-      config: {
-        height: 600,
-        itemsToShow: 1,
-        gap: 5,
-        snapAlign: "center",
-        breakpointMode: "carousel", // Determines how breakpoints are handled
-        breakpoints: {
-          300: { itemsToShow: 2, snapAlign: "center" },
-          400: { itemsToShow: 3, snapAlign: "start" },
-          500: { itemsToShow: 4, snapAlign: "start" },
-        },
-      },
     };
   },
 };
@@ -48,13 +51,18 @@ export default {
 <style scoped>
 .carousel__wrapper {
   width: 100%;
-  max-width: 800px;
-  margin: auto;
+  height: 100vh;
+  background: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .car-image {
   width: 100%;
-  height: 100%;
-  object-fit: contain; /* Ensure full image is visible without cropping */
+  height: auto;
+  min-height: 600px;
+  object-fit: contain;
 }
+
 </style>
