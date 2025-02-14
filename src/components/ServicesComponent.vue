@@ -70,7 +70,9 @@ export default{
 <style>
 .image{
   border-top-left-radius:0px; border-top-right-radius:0px;
-width: 100%; max-width: 500px; height: 470px; object-fit: cover;
+  width: 100%;
+  height: 470px;
+  object-fit: cover;
   transition:0.5s;
   filter:grayscale(0);
 }
@@ -80,7 +82,13 @@ width: 100%; max-width: 500px; height: 470px; object-fit: cover;
 }
 .container{
   border:4px solid white;
-color: black; background-color: white; padding: 10px; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; width: 100%; max-width: 500px; height: 150px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); margin-top: 1px;
+color: black;
+  background-color: white;
+  padding: 10px; display: flex;
+  flex-direction: column; align-items: center;
+  justify-content: center; text-align: center; width: 100%;
+  height: 150px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); margin-top: 1px;
 }
 .main-text{
   font-weight:700;
