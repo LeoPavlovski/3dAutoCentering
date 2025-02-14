@@ -22,33 +22,33 @@
         <v-col :cols="$vuetify.display.smAndDown? 12 : 4" :class="$vuetify.display.smAndDown? 'pr-9 pl-9' : ''">
           <div style="border:10px solid white;">
             <div style="margin:5px;">
-            <img  class="image" src="https://www.3dautocenter.com/uploads/7/2/7/0/72709373/auto-electrical-diagnostics_orig.jpg">
-            <div
-                class="container"
-            >
-              <h4 class="main-text" style="margin: 0 0 10px 0;">Centering Your Car</h4>
-              <span style="font-size:16px;" class="description">
+              <img  class="image" src="https://www.3dautocenter.com/uploads/7/2/7/0/72709373/auto-electrical-diagnostics_orig.jpg">
+              <div
+                  class="container"
+              >
+                <h4 class="main-text" style="margin: 0 0 10px 0;">Centering Your Car</h4>
+                <span style="font-size:16px;" class="description">
         The centering of the front and rear ladder ensures proper functioning of the suspension and better stability.
       </span>
-          </div>
-          </div>
+              </div>
+            </div>
           </div>
         </v-col>
         <v-col :cols="$vuetify.display.smAndDown? 12 : 4" :class="$vuetify.display.smAndDown? 'pr-9 pl-9' : ''">
           <div style="border:10px solid white;">
             <div style="margin:5px;">
-            <img
-                class="image"
-                src="https://roskillauto.co.nz/wp-content/uploads/2021/11/20211123_123348-1024x461.jpeg"
-            >
-            <div
-                class="container"
-            >
-              <h4 class="main-text" style="margin: 0 0 10px 0;">Tire change</h4>
-              <span style="font-size:16px;" class="description">Changing and balancing tires for safety andcomfortable ride. The properly balanced onestires improve handling andextend the life of the tires.
+              <img
+                  class="image"
+                  src="https://roskillauto.co.nz/wp-content/uploads/2021/11/20211123_123348-1024x461.jpeg"
+              >
+              <div
+                  class="container"
+              >
+                <h4 class="main-text" style="margin: 0 0 10px 0;">Tire change</h4>
+                <span style="font-size:16px;" class="description">Changing and balancing tires for safety andcomfortable ride. The properly balanced onestires improve handling andextend the life of the tires.
       </span>
-          </div>
-          </div>
+              </div>
+            </div>
           </div>
         </v-col>
       </v-row>
@@ -70,9 +70,7 @@ export default{
 <style>
 .image{
   border-top-left-radius:0px; border-top-right-radius:0px;
-  width: 100%;
-  height: 470px;
-  object-fit: cover;
+  width: 100%; max-width: 500px; height: 470px; object-fit: cover;
   transition:0.5s;
   filter:grayscale(0);
 }
@@ -82,13 +80,7 @@ export default{
 }
 .container{
   border:4px solid white;
-color: black;
-  background-color: white;
-  padding: 10px; display: flex;
-  flex-direction: column; align-items: center;
-  justify-content: center; text-align: center; width: 100%;
-  height: 150px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); margin-top: 1px;
+  color: black; background-color: white; padding: 10px; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; width: 100%; max-width: 500px; height: 150px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); margin-top: 1px;
 }
 .main-text{
   font-weight:700;
@@ -96,7 +88,7 @@ color: black;
 .description{
   font-size:10px;
 }
-@media(max-width:2500px){
+@media(max-width:3000px){
   .image{
     width:100%;
     max-width:1000px;
@@ -106,9 +98,9 @@ color: black;
   }
 }
 @media(max-width:1024px){
-.main-text{
-  font-size:20px;
-}
+  .main-text{
+    font-size:20px;
+  }
   .description{
     font-size:18px;
   }
