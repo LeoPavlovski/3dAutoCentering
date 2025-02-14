@@ -60,4 +60,7 @@ export default {
 .rotate-animation {
   animation: rotate 2s linear infinite;
 }
+* {
+  cursor: default;
+}
 </style>

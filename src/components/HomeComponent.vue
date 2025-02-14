@@ -71,7 +71,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 /* Letter hover effect */
 .letter {
   position: relative;
