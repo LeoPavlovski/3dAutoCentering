@@ -53,6 +53,7 @@ export default {
   mounted() {
     // Add mousemove event listener to track mouse position
     document.addEventListener('mousemove', this.moveCircle);
+    console.log('$', this.$vuetify.display.name);
   },
   methods: {
     moveCircle(event) {
@@ -171,6 +172,32 @@ export default {
     top:55%;
   }
 }
+@media(max-width:642px){
+  .logo{
+    width:250px;
+  }
+  .title{
+    font-size:35px;
+    top:50%;
+  }
+  .subtitle{
+    font-size:55px;
+    top:55%;
+  }
+}
+@media(max-width:480px){
+  .logo{
+    width:250px;
+  }
+  .title{
+    font-size:39px;
+    top:50%;
+  }
+  .subtitle{
+    font-size:55px;
+    top:55%;
+  }
+}
 @media(max-width:426px){
   .logo{
     width:220px;
@@ -205,7 +232,7 @@ export default {
     height:180px;
   }
   .title{
-    font-size:43px;
+    font-size:30px;
     top:50%;
   }
   .subtitle{

@@ -2,11 +2,12 @@
 <template>
   <v-footer v-if="!drawer" style="position:absolute;left:0;bottom:0; padding:0;margin:0; z-index:0; width:100%;">
     <div class="bg-orange-accent-4  w-100 align-center d-flex">
-      <strong style="font-size:12px; padding-left:10px;">Follow us on our socials!</strong>
+      <strong style="font-size:12px; padding-left:10px;">{{$t('socialMedia')}}!</strong>
       <v-spacer></v-spacer>
       <div v-if="this.$vuetify.display.mdAndUp" style="font-size:12.5px">
         <span>&copy;</span>
         <span> 2025 - 3D Auto Centring Gostivar.</span>
+        <img :src="tiktok">
       </div>
 
       <v-spacer></v-spacer>
@@ -33,8 +34,6 @@ import alFlag from '/public/flags/al.svg'
 import mkFlag from '/public/flags/mk.svg'
 import gbFlag from '/public/flags/gb.svg'
 import Logo from '/public/Images/3dCenteringLogo.svg'
-
-
 export default {
   computed: {
     i18n() {
@@ -44,9 +43,9 @@ export default {
   data: () => ({
     currentPath: '',
     logo: Logo,
+    tiktok:'public/Images/tiktok.svg',
     overlay : false,
     icons: [
-      'mdi-facebook',
       'mdi-instagram',
     ],
     iconsMenu:[

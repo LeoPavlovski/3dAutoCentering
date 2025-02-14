@@ -10,7 +10,7 @@
             <span style="color:white; font-weight:bold;">3D Auto Centering</span>
           </div>
           <div>
-            <template v-if="$vuetify.display.smAndUp">
+            <template v-if="$vuetify.display.lgAndUp">
               <router-link
                   :to="currentPath"
                   @click.prevent="delayedNavigation('/home')"

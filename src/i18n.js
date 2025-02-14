@@ -24,7 +24,8 @@ const messages = {
             advancedSystem: 'Advanced 3D Alignment System',
             monSat: 'Mon-Sat: 9:00 AM - 5:00 PM',
             sun: 'Sun: Closed'
-        }
+        },
+        socialMedia:'Follow us on our social media'
     },
     mkd: {
         navigation: {
@@ -35,6 +36,7 @@ const messages = {
             prices: 'Ценовник',
             auto: '3Д АВТО',
         },
+        socialMedia:'Следете не на нашите социјални мрежи',
         centering: 'Центрирање',
         automotiveService: 'Автомобилски сервис',
         contactUs: 'Контактирајте не',
@@ -60,8 +62,9 @@ const messages = {
             prices: 'Çmimet',
             auto: '3D Makina'
         },
+        automotiveService:'Shërbimi i automobilave',
+        socialMedia:'Na ndiqni në rrjetet tona sociale',
         centering: 'Përqendrimi',
-        automotiveService: 'Shërbimi i automobilave',
         contactUs: 'Na kontaktoni',
         instagram: 'Instagram',
         email: 'E-mail',
