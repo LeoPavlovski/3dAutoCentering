@@ -14,7 +14,7 @@
               <router-link
                   :to="currentPath"
                   @click.prevent="delayedNavigation('/home')"
-                  style="text-decoration:none; color:white; font-size:18px;"
+                  style="text-decoration:none; color:white; font-size:18px"
                   class="font-weight-bold mx-5"
                   :style="{
                   textDecoration: $route.path === '/home' ? 'underline' : 'none',
@@ -22,6 +22,7 @@
                   marginTop: '10px',
                   fontSize: '18px',
                   letterSpacing: '1.4px'
+
                   }"
               >
                 {{$t('navigation.home')}}

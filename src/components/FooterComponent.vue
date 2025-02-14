@@ -7,7 +7,6 @@
       <div v-if="this.$vuetify.display.mdAndUp" style="font-size:12.5px">
         <span>&copy;</span>
         <span> 2025 - 3D Auto Centring Gostivar.</span>
-        <img :src="tiktok">
       </div>
 
       <v-spacer></v-spacer>
@@ -43,7 +42,6 @@ export default {
   data: () => ({
     currentPath: '',
     logo: Logo,
-    tiktok:'public/Images/tiktok.svg',
     overlay : false,
     icons: [
       'mdi-instagram',

@@ -67,7 +67,7 @@ export default{
   }
 }
 </script>
-<style>
+<style scoped>
 .image{
   border-top-left-radius:0px; border-top-right-radius:0px;
   width: 100%; max-width: 500px; height: 470px; object-fit: cover;
