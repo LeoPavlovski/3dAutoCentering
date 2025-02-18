@@ -41,7 +41,7 @@
 
 <script>
 import logo from '/public/Images/3dCenteringLogo.svg';
-import background1 from '/public/Images/background1.svg';
+import background1 from '/public/Images/background1.webp';
 import background2 from '/public/Images/background2.svg';
 
 export default {
