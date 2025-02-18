@@ -26,7 +26,7 @@
       <!-- Background Image -->
       <img
           style="width: 100%; height: 100vh; object-fit: cover;"
-          src="https://www.shutterstock.com/image-photo/closeup-car-wheel-indoors-service-600nw-2103819539.jpg"
+          :src="siteBackground"
       />
 
       <!-- Description -->
@@ -41,10 +41,14 @@
 
 <script>
 import logo from '/public/Images/3dCenteringLogo.svg';
+import background1 from '/public/Images/background1.svg';
+import background2 from '/public/Images/background2.svg';
 
 export default {
   data() {
     return {
+      siteBackground: background1,
+      siteBackgroun2: background2,
       Logo: logo,
       titleLetters: '3D AUTO'.split(''), // Split title into individual letters
       subtitleLetters: 'Centering'.split(''), // Split subtitle into individual letters
