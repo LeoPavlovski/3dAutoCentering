@@ -1,27 +1,103 @@
 <template>
   <v-card class="elevation-0" style="border-radius:0px;">
-    <v-layout height="100vh">
-      <v-app-bar color="black" style="border-radius:0 !important;">
-        <v-app-bar-nav-icon variant="text" @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
+    <v-layout height="100vh" width="100%">
 
-        <v-toolbar-title>3D Auto Centering</v-toolbar-title>
+      <v-app-bar style="border-radius:0 !important; background:black;">
 
-        <v-spacer></v-spacer>
+        <v-app-bar-nav-icon color="white" variant="text" @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
+        <div class="d-flex align-center justify-space-between" style="width:100%;">
+          <div>
+            <button style="color:white; font-weight:bold;" @click="delayedNavigation('/home')">3D Auto Centering</button>
+          </div>
+          <div>
+            <template v-if="$vuetify.display.lgAndUp">
+              <router-link
+                  :to="currentPath"
+                  @click.prevent="delayedNavigation('/home')"
+                  style="text-decoration:none; color:white; font-size:18px"
+                  class="font-weight-bold mx-5"
+                  :style="{
+                  textDecoration: $route.path === '/home' ? 'underline' : 'none',
+                  color: $route.path === '/home' ? '#FF6D00' : 'white',
+                  marginTop: '10px',
+                  fontSize: '18px',
+                  letterSpacing: '1.4px'
 
-        <template v-if="$vuetify.display.smAndUp">
-        <router-link to="/home" link style="text-decoration:none; color:white; font-size:18px;" class="font-weight-bold">Home</router-link>
-        <router-link to="/services" style="text-decoration:none;  color:white; font-size:18px;" class="mx-2 font-weight-bold">Services</router-link>
-        <router-link to="/contact" style="text-decoration:none; color:white; font-size:18px;" class="mr-2 font-weight-bold">Contact</router-link>
-        </template>
-        <v-btn text @click="changeLanguage('mkd')">
-          <img :src="Macedonian" style="width:30px; height:30px;">
-        </v-btn>
-        <v-btn text @click="changeLanguage('en')">
-          <img :src="England" style="width:30px; height:30px;">
-        </v-btn>
-        <v-btn text @click="changeLanguage('alb')">
-          <img :src="Albanian" style="width:30px; height:30px;">
-        </v-btn>
+                  }"
+              >
+                {{$t('navigation.home')}}
+              </router-link>
+              <router-link
+                  :to="currentPath"
+                  @click.prevent="delayedNavigation('/services')"
+                  style="text-decoration:none; color:white; font-size:18px; letter-spacing: 1.4px"
+                  class="mx-2 font-weight-bold mx-5"
+                  :style="{
+                  textDecoration: $route.path === '/services' ? 'underline' : 'none',
+                  color: $route.path === '/services' ? '#FF6D00' : 'white',
+                  marginTop: '10px',
+                  fontSize: '18px',
+                  letterSpacing: '1.4px'
+  }"
+              >
+                {{$t('navigation.services')}}
+              </router-link>
+              <router-link
+                  :to="currentPath"
+                  @click.prevent="delayedNavigation('/contact')"
+                  style="text-decoration:none; color:white; font-size:18px; letter-spacing: 1.4px"
+                  class="mr-2 font-weight-bold mx-5"
+                  :style="{
+                  textDecoration: $route.path === '/contact' ? 'underline' : 'none',
+                  color: $route.path === '/contact' ? '#FF6D00' : 'white',
+                  marginTop: '10px',
+                  fontSize: '18px',
+                  letterSpacing: '1.4px'
+  }"
+              >
+                {{$t('navigation.contact')}}
+              </router-link>
+              <router-link
+                  :to="currentPath"
+                  @click.prevent="delayedNavigation('/gallery')"
+                  style="text-decoration:none; color:white; font-size:18px; letter-spacing: 1.4px"
+                  class="mr-2 font-weight-bold mx-5"
+                  :style="{
+                  textDecoration: $route.path === '/gallery' ? 'underline' : 'none',
+                  color: $route.path === '/gallery' ? '#FF6D00' : 'white',
+                  marginTop: '10px',
+                  fontSize: '18px',
+                  letterSpacing: '1.4px'
+  }"
+              >
+                {{$t('navigation.gallery')}}
+              </router-link>
+
+              <router-link
+                  :to="currentPath"
+                  @click.prevent="delayedNavigation('/prices')"
+                  style="text-decoration:none; color:white; font-size:18px; letter-spacing: 1.4px"
+                  class="mr-2 font-weight-bold mx-5"
+                  :style="{
+                  textDecoration: $route.path === '/prices' ? 'underline' : 'none',
+                  color: $route.path === '/prices' ? '#FF6D00' : 'white',
+                  marginTop: '10px',
+                  fontSize: '18px',
+                  letterSpacing: '1.4px'
+  }"
+              >
+                {{$t('navigation.prices')}}
+              </router-link>
+            </template>
+          </div>
+          <div>
+            <img  @click="changeLanguage('mkd')"  :src="Macedonian" style="width:25px; height:25px; border-radius:50%; cursor:pointer;">
+            <img  @click="changeLanguage('en')" class="mx-2" :src="England" style="width:25px; height:25px; border-radius:50%; cursor:pointer">
+            <img @click="changeLanguage('al')" :src="Albanian" style="width:25px; margin-right:10px; height:25px; border-radius:50%; cursor:pointer">
+          </div>
+        </div>
+
+
       </v-app-bar>
 
       <v-navigation-drawer
@@ -29,17 +105,23 @@
           :location="$vuetify.display.mobile ? 'bottom' : undefined"
           temporary
           absolute
-          style="height:100vh"
+          style="height:100vh;"
       >
-        <v-list>
+        <v-list height="400">
           <v-list-item
-              v-for="(item, index) in items"
+              v-for="(item, index) in iconsMenu"
               :key="index"
+              @click.prevent="delayedNavigation(item.path)"
               :to="item.path"
               link
+              @click="loaderAnimation"
           >
-            <v-list-item-title>{{ $t(item.title) }}</v-list-item-title>
+            <div class="d-flex align-center">
+              <v-icon color="#E65100" style="margin-right:10px;">{{item.icon}}</v-icon>
+              <v-list-item-title style="font-weight:500;">{{ $t(item.name) }}</v-list-item-title>
+            </div>
           </v-list-item>
+
         </v-list>
       </v-navigation-drawer>
       <v-main>
@@ -48,6 +130,13 @@
 
     </v-layout>
   </v-card>
+  <v-overlay
+      opacity="0.6"
+      :model-value="overlay"
+      class="align-center justify-center"
+  >
+    <img width="120" height="120" :src="logo" class="rotate-animation">
+  </v-overlay>
 </template>
 
 <script>
@@ -55,6 +144,8 @@ import i18n from "@/i18n";
 import alFlag from '/public/flags/al.svg'
 import mkFlag from '/public/flags/mk.svg'
 import gbFlag from '/public/flags/gb.svg'
+import Logo from '/public/Images/3dCenteringLogo.svg'
+
 
 export default {
   computed: {
@@ -63,6 +154,20 @@ export default {
     }
   },
   data: () => ({
+    currentPath: '',
+    logo: Logo,
+    overlay : false,
+    icons: [
+      'mdi-facebook',
+      'mdi-instagram',
+    ],
+    iconsMenu:[
+      {icon:'mdi-home', name:'navigation.home', path:'/home'},
+      {icon: 'mdi-car-cog', name:'navigation.services' , path:'/services'},
+      {icon:'mdi-card-account-phone' , name:'navigation.contact' , path:'/contact'},
+      {icon:'mdi-car-multiple', name:'navigation.gallery' , path:'/gallery'},
+      {icon:'mdi-cash-multiple', name:'navigation.prices' , path:'/prices'},
+    ],
     drawer: false,
     Albanian:alFlag,
     Macedonian:mkFlag,
@@ -70,15 +175,44 @@ export default {
     group: null,
     items: [
       { title: 'navigation.home', path: '/home' },
-      { title: 'navigation.services', path: '/services' },
+      { title: 'navigation.services', path: '/service' },
       { title: 'navigation.contact', path: '/contact' },
-      { title: 'navigation.about', path: '/about' },
+      { title: 'navigation.gallery', path: '/gallery' },
+      { title: 'navigation.prices', path: '/prices' },
     ],
   }),
+  mounted() {
+  },
   methods: {
+    redirectToPage(item){
+      const instagramProfile = 'https://www.instagram.com/3dcenteringgostivar/'
+      const facebookProfile = 'https://www.facebook.com/jovanoski.nikola'
+      if(item === 'mdi-facebook'){
+        //Open a facebook profile page
+        window.open(facebookProfile);
+      }
+      if(item === 'mdi-instagram'){
+        //Open an instagram page
+        window.open(instagramProfile);
+      }
+    },
     changeLanguage(value) {
       this.$i18n.locale = value;
+      this.loaderAnimation();
     },
+    loaderAnimation () {
+      this.overlay = true;
+      setTimeout(()=>{
+        this.overlay = false;
+      },1200)
+    },
+    delayedNavigation(path) {
+      this.loaderAnimation();
+      setTimeout(() => {
+        this.currentPath = path;
+        this.$router.push(path);
+      }, 1000); // Delay navigation by 1 second
+    }
   },
 
   watch: {
@@ -88,3 +222,20 @@ export default {
   },
 }
 </script>
+<style scoped>
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+    filter: grayscale(2);
+  }
+  to {
+    transform: rotate(360deg);
+    filter: grayscale(0);
+  }
+}
+
+.rotate-animation {
+  animation: rotate 2s linear infinite;
+
+}
+</style>
