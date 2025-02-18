@@ -1,8 +1,14 @@
 <template>
-  <div style="background-color:black; height:100vh; width:100%;">
-    <div class="d-flex flex-column">
+  <div>
+    <v-img
+        :src="siteBackground"
+        cover
+        class="full-screen-image"
+    />
+    <div style="position:absolute; top:10%; left:0; bottom:0; right:0;">
       <h1 style="color:white;" class="pa-5 title1" :class="$vuetify.display.smAndDown? 'text-center' : 'text-left'">
-        {{ $t('whatareweoffering') }}</h1>
+        {{ $t('whatareweoffering') }}
+      </h1>
       <v-row class="rows d-flex" style="height:80vh; overflow:auto;">
         <v-col :cols="$vuetify.display.smAndDown? 12 : 4" :class="$vuetify.display.smAndDown? 'pr-9' : ''">
           <div style="border:10px solid white; margin-left:25px;">
@@ -57,10 +63,12 @@
   </div>
 </template>
 <script>
+import background1 from "../../public/Images/background1.webp";
+
 export default{
   data(){
     return{
-
+      siteBackground: background1,
     }
   },
   mounted(){
@@ -68,6 +76,14 @@ export default{
 }
 </script>
 <style scoped>
+.full-screen-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+}
 .image{
   border-top-left-radius:0px; border-top-right-radius:0px;
   width: 100%; max-width: 500px; height: 470px; object-fit: cover;
