@@ -10,6 +10,14 @@
       </div>
 
       <v-spacer></v-spacer>
+      <img
+          :src="tiktok"
+          width="20"
+          height="20"
+          class="tiktok-icon"
+          @click="redirectToTikTok"
+      />
+
       <v-btn
           v-for="icon in icons"
           :key="icon"
@@ -33,6 +41,7 @@ import alFlag from '/public/flags/al.svg'
 import mkFlag from '/public/flags/mk.svg'
 import gbFlag from '/public/flags/gb.svg'
 import Logo from '/public/Images/3dCenteringLogo.svg'
+import Tiktok from '/public/Images/tiktok.svg'
 export default {
   computed: {
     i18n() {
@@ -41,6 +50,7 @@ export default {
   },
   data: () => ({
     currentPath: '',
+    tiktok: Tiktok,
     logo: Logo,
     overlay : false,
     icons: [
@@ -81,6 +91,10 @@ export default {
         window.open(instagramProfile);
       }
     },
+    redirectToTikTok(){
+      const instagramProfile = 'https://www.tiktok.com/@3dcenteringgostivar'
+        window.open(instagramProfile);
+    },
     changeLanguage(value) {
       this.$i18n.locale = value;
       this.loaderAnimation();
@@ -107,3 +121,14 @@ export default {
   },
 }
 </script>
+<style scoped>
+.tiktok-icon {
+  cursor: pointer; /* Change cursor to hand */
+  transition: filter 0.3s ease-in-out; /* Smooth transition */
+  filter: grayscale(50%) brightness(80%); /* Initially gray */
+}
+
+.tiktok-icon:hover {
+  filter: grayscale(0%) brightness(200%); /* Fully white */
+}
+</style>
