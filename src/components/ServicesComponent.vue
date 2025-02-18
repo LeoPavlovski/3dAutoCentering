@@ -7,10 +7,10 @@
     />
     <div style="position:absolute; top:10%; left:0; bottom:0; right:0;">
       <h1 style="color:white;" class="pa-5 title1" :class="$vuetify.display.smAndDown? 'text-center' : 'text-left'">
-        {{ $t('whatareweoffering') }}aaa
+        {{ $t('whatareweoffering') }}
       </h1>
       <v-row class="rows d-flex" style="height:80vh; overflow:auto;">
-        <v-col :cols="$vuetify.display.smAndDown? 12 : 4" :class="$vuetify.display.smAndDown? 'pr-9' : ''">
+        <v-col :cols="$vuetify.display.smAndDown ? 12 : 4" :class="$vuetify.display.smAndDown ? 'pr-9' : ''">
           <div style="border:10px solid white; margin-left:25px;">
             <div style="margin:5px;">
               <img
@@ -18,42 +18,41 @@
                   src="https://img.freepik.com/free-photo/auto-mechanic-checking-car-engine_1303-14032.jpg"
               >
               <div class="container">
-                <h4 class="main-text" style="margin: 0 0 10px 0;">Maintaining your car
-                </h4>
+                <h4 class="main-text" style="margin: 0 0 10px 0;">{{ $t('servicesDetails.machine') }}</h4>
                 <span style="font-size:16px;" class="description">
-             Regular maintenance of related partswith the centering, such as traps andsuspension system, is key to the correctoperation of the car.</span>
+            {{ $t('servicesDetails.machineDesc') }}
+          </span>
               </div>
             </div>
           </div>
         </v-col>
-        <v-col :cols="$vuetify.display.smAndDown? 12 : 4" :class="$vuetify.display.smAndDown? 'pr-9 pl-9' : ''">
+
+        <v-col :cols="$vuetify.display.smAndDown ? 12 : 4" :class="$vuetify.display.smAndDown ? 'pr-9 pl-9' : ''">
           <div style="border:10px solid white;">
             <div style="margin:5px;">
-              <img  class="image" src="https://www.3dautocenter.com/uploads/7/2/7/0/72709373/auto-electrical-diagnostics_orig.jpg">
-              <div
-                  class="container"
-              >
-                <h4 class="main-text" style="margin: 0 0 10px 0;">Centering Your Car</h4>
+              <img class="image" src="https://www.3dautocenter.com/uploads/7/2/7/0/72709373/auto-electrical-diagnostics_orig.jpg">
+              <div class="container">
+                <h4 class="main-text" style="margin: 0 0 10px 0;">{{ $t('servicesDetails.alignment') }}</h4>
                 <span style="font-size:16px;" class="description">
-        The centering of the front and rear ladder ensures proper functioning of the suspension and better stability.
-      </span>
+            {{ $t('servicesDetails.alignmentDesc') }}
+          </span>
               </div>
             </div>
           </div>
         </v-col>
-        <v-col :cols="$vuetify.display.smAndDown? 12 : 4" :class="$vuetify.display.smAndDown? 'pr-9 pl-9' : ''">
+
+        <v-col :cols="$vuetify.display.smAndDown ? 12 : 4" :class="$vuetify.display.smAndDown ? 'pr-9 pl-9' : ''">
           <div style="border:10px solid white;">
             <div style="margin:5px;">
               <img
                   class="image"
                   src="https://roskillauto.co.nz/wp-content/uploads/2021/11/20211123_123348-1024x461.jpeg"
               >
-              <div
-                  class="container"
-              >
-                <h4 class="main-text" style="margin: 0 0 10px 0;">Tire change</h4>
-                <span style="font-size:16px;" class="description">Changing and balancing tires for safety andcomfortable ride. The properly balanced onestires improve handling andextend the life of the tires.
-      </span>
+              <div class="container">
+                <h4 class="main-text" style="margin: 0 0 10px 0;">{{ $t('servicesDetails.chassisCheck') }}</h4>
+                <span style="font-size:16px;" class="description">
+            {{ $t('servicesDetails.chassisCheckDesc') }}
+          </span>
               </div>
             </div>
           </div>
