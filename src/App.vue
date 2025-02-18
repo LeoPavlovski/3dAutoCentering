@@ -35,7 +35,7 @@ export default {
     this.overlay = true;
     setTimeout(()=>{
       this.overlay = false;
-    },3000)  }
+    },3500)  }
 }
 </script>
 <style>
