@@ -7,7 +7,7 @@
     />
     <div style="position:absolute; top:10%; left:0; bottom:0; right:0;">
       <h1 style="color:white;" class="pa-5 title1" :class="$vuetify.display.smAndDown? 'text-center' : 'text-left'">
-        {{ $t('whatareweoffering') }}
+        {{ $t('whatareweoffering') }}aaa
       </h1>
       <v-row class="rows d-flex" style="height:80vh; overflow:auto;">
         <v-col :cols="$vuetify.display.smAndDown? 12 : 4" :class="$vuetify.display.smAndDown? 'pr-9' : ''">
