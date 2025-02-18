@@ -21,16 +21,15 @@ export default {
   data() {
     return {
       price: "/Images/3dCenteringPrices.svg",
-      priceMobileMacedonian: "/Images/Macedonian.svg",
-      priceMobileAlbanian: "/Images/Albanian.svg",
-      priceMobileEnglish: "/Images/English.svg",
+      priceMobileMacedonian: "/Images/MacedonianPricesSmall.svg",
+      priceMobileAlbanian: "/Images/AlbanianPricesSmall.svg",
+      priceMobileEnglish: "/Images/EnglishPricesSmall.svg",
       priceWebMacedonian: "/Images/MacedonianPriceBig.svg",
       priceWebEnglish: "/Images/EnglishPriceBig.svg",
       priceWebAlbanian: "/Images/AlbanianPriceBig.svg",
     };
   },
   mounted(){
-    console.log('asiidijd' ,this.$i18n.locale);
   }
 };
 </script>

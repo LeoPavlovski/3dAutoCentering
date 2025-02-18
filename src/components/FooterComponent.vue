@@ -67,11 +67,9 @@ export default {
     ],
   }),
   mounted() {
-    console.log('Path : ' , this.$router.currentRoute.value.path);
   },
   methods: {
     redirectToPage(item){
-      console.log('Item : ' , item);
       const instagramProfile = 'https://www.instagram.com/3dcenteringgostivar/'
       const facebookProfile = 'https://www.facebook.com/jovanoski.nikola'
       if(item === 'mdi-facebook'){
