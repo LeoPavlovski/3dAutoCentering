@@ -1,7 +1,8 @@
 <template>
   <div style="background-color:black; height:100vh; width:100%;">
     <div class="d-flex flex-column">
-      <h1 style="color:white;" class="pa-5 title1" :class="$vuetify.display.smAndDown? 'text-center' : 'text-left'">What Are We Offering?</h1>
+      <h1 style="color:white;" class="pa-5 title1" :class="$vuetify.display.smAndDown? 'text-center' : 'text-left'">
+        {{ $t('whatareweoffering') }}</h1>
       <v-row class="rows d-flex" style="height:80vh; overflow:auto;">
         <v-col :cols="$vuetify.display.smAndDown? 12 : 4" :class="$vuetify.display.smAndDown? 'pr-9' : ''">
           <div style="border:10px solid white; margin-left:25px;">

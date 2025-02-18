@@ -48,7 +48,7 @@ export default {
 }
 
 .full-screen-image {
-  max-width: 90vw; /* Ensures the image fits well within the viewport */
+  max-width: 100vw; /* Ensures the image fits well within the viewport */
   max-height: 90vh; /* Prevents the image from overflowing */
   object-fit: contain; /* Keeps the image fully visible without distortion */
 }
@@ -56,7 +56,7 @@ export default {
 /* Responsive adjustments */
 @media (max-width: 768px) {
   .full-screen-image {
-    max-width: 95vw;
+    max-width: 100vw;
     max-height: 85vh;
   }
 }

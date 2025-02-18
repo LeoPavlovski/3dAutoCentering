@@ -15,6 +15,7 @@ const messages = {
         contactUs: 'Contact Us',
         instagram: 'Instagram',
         email: 'E-mail',
+        whatareweoffering: 'What are we offering?',
         contactInfo: {
             contactPerson: 'Contact Person',
             address: 'Address',
@@ -42,6 +43,7 @@ const messages = {
         contactUs: 'Контактирајте не',
         instagram: 'Инстаграм',
         email: 'Е-маил',
+        whatareweoffering: 'Што ви нудиме?',
         contactInfo: {
             contactPerson: 'Лице за Контакт',
             address: 'Адреса',
@@ -68,6 +70,7 @@ const messages = {
         contactUs: 'Na kontaktoni',
         instagram: 'Instagram',
         email: 'E-mail',
+        whatareweoffering: 'Çfarë po ofrojmë?',
         contactInfo: {
             contactPerson: 'Personi i kontaktit',
             address: 'Adresa',
