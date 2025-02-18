@@ -22,25 +22,6 @@
       <!-- Right column for contact details -->
       <v-col cols="12" md="6" class="d-flex flex-column">
         <v-card height="100%">
-          <!-- Image Wrapper -->
-          <div style="max-width: 400px; margin: auto; padding: 20px; background: #f9f9f9; border-radius: 10px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); font-family: Arial, sans-serif;">
-            <form name="contact" netlify style="display: flex; flex-direction: column; gap: 15px;">
-              <h2 style="text-align: center; color: #333;">Contact Us 💌</h2>
-
-              <label style="font-weight: bold; color: #555;">Name</label>
-              <input type="text" name="name" placeholder="Enter your name" required
-                     style="padding: 10px; border: 1px solid #ddd; border-radius: 5px; outline: none; font-size: 16px;">
-
-              <label style="font-weight: bold; color: #555;">Email</label>
-              <input type="email" name="email" placeholder="Enter your email" required
-                     style="padding: 10px; border: 1px solid #ddd; border-radius: 5px; outline: none; font-size: 16px;">
-
-              <button type="submit" style="background: #ff6b6b; color: white; font-size: 16px; padding: 10px; border: none; border-radius: 5px; cursor: pointer; transition: 0.3s;">
-                Send 💌
-              </button>
-            </form>
-          </div>
-
           <!-- Contact Info -->
           <v-list >
             <v-list-item>

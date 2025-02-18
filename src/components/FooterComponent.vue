@@ -4,7 +4,7 @@
     <div class="bg-orange-accent-4  w-100 align-center d-flex">
       <strong style="font-size:12px; padding-left:10px;">{{$t('socialMedia')}}!</strong>
       <v-spacer></v-spacer>
-      <div v-if="this.$vuetify.display.mdAndUp" style="font-size:12.5px">
+      <div v-if="this.$vuetify.display.mdAndUp" style="font-size:12.5px; margin-right: 100px">
         <span>&copy;</span>
         <span> 2025 - 3D Auto Centring Gostivar.</span>
       </div>
