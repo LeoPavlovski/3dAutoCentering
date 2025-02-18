@@ -7,7 +7,7 @@
         <v-app-bar-nav-icon color="white" variant="text" @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
         <div class="d-flex align-center justify-space-between" style="width:100%;">
           <div>
-            <span style="color:white; font-weight:bold;">3D Auto Centering</span>
+            <button style="color:white; font-weight:bold;" @click="delayedNavigation('/home')">3D Auto Centering</button>
           </div>
           <div>
             <template v-if="$vuetify.display.lgAndUp">
@@ -204,7 +204,7 @@ export default {
       this.overlay = true;
       setTimeout(()=>{
         this.overlay = false;
-      },1300)
+      },1200)
     },
     delayedNavigation(path) {
       this.loaderAnimation();
