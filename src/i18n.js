@@ -90,28 +90,29 @@ const messages = {
         contactUs: 'Na kontaktoni',
         instagram: 'Instagram',
         email: 'E-mail',
-        whatareweoffering: 'Çfarë po ofrojmë?',
+        whatareweoffering: 'Çfarë ofrojmë?',
         contactInfo: {
             contactPerson: 'Personi i kontaktit',
-            address: 'Adresa',
+            address: 'Lokacioni',
             phone: 'Telefoni',
             machine: 'Techno Vector 7 Makina',
             workingHours: 'Orari i punës',
             advancedSystem: 'Sistemi i avancuar i përqendrimit',
             monSat: 'Hën-Sht: 9:00 - 17:00',
-            sun: 'Die: E mbyllur'
+            sun: 'Diel: E mbyllur'
         },
         socialMedia: 'Na ndiqni në rrjetet tona sociale',
         servicesDetails: {
             machine: 'Techno Vector 7',
-            machineDesc: 'Ne përdorim një makinë të avancuar Techno Vector 7, e cila është e pajisur me një sistem 3D me 4 kamera për vendosjen e saktë të rrotave. Kjo teknologji e fundit ofron matje në kohë reale, duke garantuar saktësi dhe performancë optimale të automjetit.',
+            machineDesc: 'Ne përdorim makinën e avancuar Techno Vector 7, e cila është e pajisur me një sistem 3D me 4 kamera për rregullimin e saktë të rrotave. Kjo teknologji më e fundit siguron matje në kohë reale, duke garantuar saktësi dhe performancë optimale të automjetit.',
 
-            alignment: 'Vendosje e Plotë e Rrotave',
-            alignmentDesc: 'Procesi ynë i montimit të rrotave siguron pozicionimin e saktë të boshteve të përparme dhe të pasme, si dhe të të gjitha rrotave. Kjo përmirëson trajtimin, stabilitetin dhe jetën e gomave. Ne ofrojmë shërbime makinash, furgonash dhe xhipash jashtë rrugës për të sigurt dhe të sigurt',
+            alignment: 'Rregullimi i plotë i rrotave',
+            alignmentDesc: 'Procesi ynë i rregullimit të rrotave siguron pozicionimin e duhur të paraklopit të përparmë dhe të pasmë. Kjo përmirëson drejtimin, stabilitetin dhe jetëgjatësinë e gomave. Ne ofrojmë shërbime për makina dhe furgonë për një vozitje të sigurt dhe të besueshme.',
 
-            chassisCheck: 'Kontrollimi i shasisë përpara se të përqendroni automjetin',
-            chassisCheckDesc: 'Përpara se ta vendosim automjetin në një makinë qendrimi, ne kryejmë një inspektim të detajuar të shasisë dhe komponentëve kryesorë poshtë automjetit. Kjo na lejon të dallojmë problemet e mundshme ose zëvendësimet e nevojshme, duke siguruar një bazë të fortë për qendërzim.'
+            chassisCheck: 'Kontrolli i shasisë para rregullimit të automjetit',
+            chassisCheckDesc: 'Para se ta vendosim automjetin në makinë për rregullimin e rrotave, kryejmë një kontroll të detajuar të shasisë dhe komponentëve kryesorë të nënshasisë. Kjo na lejon të zbulojmë probleme të mundshme ose pjesë që duhen zëvendësuar, duke siguruar një bazë të qëndrueshme për rregullim.'
         }
+
 
     }
 };
