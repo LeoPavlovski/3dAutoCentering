@@ -17,7 +17,7 @@
             style="color: white;"
             class="pa-5 title1 text-right"
         >
-          {{ $t('Contact Information') }}
+          {{ $t('ContactInformation') }}
         </h1>
       </div>
 
