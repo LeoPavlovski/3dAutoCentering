@@ -65,14 +65,14 @@ const messages = {
         },
         socialMedia: 'Следете не на нашите социјални мрежи',
         servicesDetails: {
-            machine: 'Techno Vector 7',
+            machine: 'Техно Вектор 7',
             machineDesc: 'Ние користиме напредна Techno Vector 7 машина, која е опремена со 3D систем со 4 камери за прецизно поставување на тркалата. Оваа најнова технологија обезбедува мерења во реално време, што гарантира точност и оптимални перформанси на возилото.',
 
-            alignment: 'Комплетно поставување на тркала',
-            alignmentDesc: 'Нашиот процес на поставување на тркала обезбедува правилно позиционирање на предниот и задниот трап, како и на сите тркала. Ова го подобрува управувањето, стабилноста и животниот век на гумите. Нудиме услуги за автомобили, комбиња и оф-роуд џипови за безбедно и сигурно возење.',
+            alignment: 'Комплетно центрирање на тркала',
+            alignmentDesc: 'Нашиот процес на центрирање на тркалата обезбедува правилно позиционирање на предниот и задниот трап. Ова го подобрува управувањето, стабилноста и животниот век на гумите. Нудиме услуги за автомобили и комбиња за безбедно и сигурно возење.',
 
             chassisCheck: 'Проверка на шасијата пред центрирање на возилото',
-            chassisCheckDesc: 'Пред да го поставиме возилото на машина за центрирање, извршуваме детална проверка на шасијата и клучните компоненти под возилото. Ова ни овозможува да откриеме потенцијални проблеми или потребни замени, осигурувајќи стабилна основа за процесот на центрирање.'
+            chassisCheckDesc: 'Пред да го ставиме возилото на машина за центрирање, вршиме детална проверка на шасијата и клучните компоненти на подвозјето. Ова ни овозможува да откриеме потенцијални проблеми или потребни замени, осигурувајќи стабилна основа за центрирање.'
         }
 
     },
@@ -104,13 +104,13 @@ const messages = {
         socialMedia: 'Na ndiqni në rrjetet tona sociale',
         servicesDetails: {
             machine: 'Techno Vector 7',
-            machineDesc: 'Ne përdorim Techno Vector 7, një sistem i avancuar me 4 kamera 3D për një vendosje të saktë të rrotave. Kjo teknologji moderne siguron matje në kohë reale, duke garantuar saktësi dhe performancë optimale të automjetit.',
+            machineDesc: 'Ne përdorim një makinë të avancuar Techno Vector 7, e cila është e pajisur me një sistem 3D me 4 kamera për vendosjen e saktë të rrotave. Kjo teknologji e fundit ofron matje në kohë reale, duke garantuar saktësi dhe performancë optimale të automjetit.',
 
             alignment: 'Vendosje e Plotë e Rrotave',
-            alignmentDesc: 'Procesi ynë i vendosjes siguron që aksesi i përparmë, aksesi i pasëm dhe të gjitha rrotat të jenë pozicionuar saktë. Kjo përmirëson manovrimin, stabilitetin dhe jetëgjatësinë e gomave. Ne ofrojmë shërbime për makina, furgona dhe xhipa off-road për një udhëtim të sigurt dhe të qetë.',
+            alignmentDesc: 'Procesi ynë i montimit të rrotave siguron pozicionimin e saktë të boshteve të përparme dhe të pasme, si dhe të të gjitha rrotave. Kjo përmirëson trajtimin, stabilitetin dhe jetën e gomave. Ne ofrojmë shërbime makinash, furgonash dhe xhipash jashtë rrugës për të sigurt dhe të sigurt',
 
-            chassisCheck: 'Inspektimi i Shasisë dhe Suspencionit para Vendosjes së Rrotave',
-            chassisCheckDesc: 'Përpara se ta vendosim automjetin në makinë për vendosjen e rrotave, ne bëjmë një inspektim të thelluar të shasisë, suspencionit dhe komponentëve të rëndësishëm nën automjet. Kjo na lejon të zbulojmë çdo problem të mundshëm ose nevojë për zëvendësim, duke siguruar një bazë të qëndrueshme për procesin e vendosjes.'
+            chassisCheck: 'Kontrollimi i shasisë përpara se të përqendroni automjetin',
+            chassisCheckDesc: 'Përpara se ta vendosim automjetin në një makinë qendrimi, ne kryejmë një inspektim të detajuar të shasisë dhe komponentëve kryesorë poshtë automjetit. Kjo na lejon të dallojmë problemet e mundshme ose zëvendësimet e nevojshme, duke siguruar një bazë të fortë për qendërzim.'
         }
 
     }
