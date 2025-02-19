@@ -88,6 +88,18 @@
                       <v-list-item-subtitle style="margin-left:10px;">@3dcenteringgostivar</v-list-item-subtitle>
                       </div>
                     </v-list-item>
+                    <v-list-item style="max-width:1000px; border:1px solid black;" class="pa-5">
+                      <div class="d-flex align-center justify-center">
+                        <img
+                            :src="tiktok"
+                            width="20"
+                            height="20"
+                            class="tiktok-icon"
+                        />
+                        <v-list-item-title class="ml-1">TikTok</v-list-item-title>
+                      <v-list-item-subtitle style="margin-left:10px;">@3dcenteringgostivar</v-list-item-subtitle>
+                      </div>
+                    </v-list-item>
 
                     <v-list-item style="max-width:1000px; border:1px solid black;" class="pa-5">
                       <div class="d-flex align-center justify-center">
@@ -118,10 +130,13 @@
 </template>
 <script>
 import background1 from "../../public/Images/background1.webp";
+import Tiktok from '/public/Images/tiktok.svg'
 
 export default{
   data(){
     return{
+      tiktok: Tiktok,
+
       siteBackground: background1,
     }
   },
@@ -201,4 +216,10 @@ export default{
     height:200px;
   }
 }
+.tiktok-icon {
+  cursor: pointer;
+  transition: filter 0.3s ease-in-out;
+  filter: invert(47%) sepia(94%) saturate(664%) hue-rotate(1deg) brightness(101%) contrast(101%);
+}
+
 </style>
