@@ -14,6 +14,7 @@
           {{ $t('Location') }}
         </h1>
         <h1
+            v-if="$vuetify.display.mdAndUp"
             style="color: white;"
             class="pa-5 title1 text-right"
         >
@@ -29,10 +30,10 @@
           <!-- Map Column -->
           <v-col
               cols="12"
-              md="6"
+              md="7"
               class="d-flex justify-center"
           >
-            <div style="border: 10px solid white; width: 100%; max-width: 1000px;">
+            <div style="border: 10px solid white; width: 100%;">
               <div style="margin: 5px; height: 500px;">
                 <iframe
                     src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d743.7578677838892!2d20.9161448!3d41.7845354!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x135157fec01f9d99%3A0x936134c415411d2b!2s3D%20Auto%20Centering%20Gostivar!5e0!3m2!1sen!2smk!4v1739800715235!5m2!1sen!2smk"
@@ -47,76 +48,34 @@
           </v-col>
 
           <!-- Contact Info Column -->
+          <h1
+              v-if="$vuetify.display.smAndDown"
+              style="color: white;"
+              class="pa-5 title1 text-start mr-auto"
+          >
+            {{ $t('Contact Information') }}
+          </h1>
           <v-col
               cols="12"
-              md="6"
+              md="5"
               class="d-flex justify-center"
           >
-            <div style="border: 10px solid white; height: auto; width: 100%; max-width: 1000px;">
+            <div style="border: 10px solid white; width: 100%;">
               <div style="margin: 5px; height: 500px;">
                 <v-card height="500">
                   <v-list>
-                    <v-list-item>
-                      <div class="d-flex align-center justify-center">
-                        <v-icon color="orange" class="mr-2">mdi-account</v-icon>
-                        <v-list-item-title>{{ $t('contactInfo.contactPerson') }} :</v-list-item-title>
-                        <v-list-item-subtitle style="margin-left:10px;">Slagjan Nikolovski</v-list-item-subtitle>
-                      </div>
-
-                    </v-list-item>
-
-                    <v-list-item  class="pa-5">
-                      <div class="d-flex align-center justify-center ">
-                        <v-icon color="orange" class="mr-2">mdi-phone</v-icon>
-                        <v-list-item-title>{{ $t('contactInfo.phone') }}</v-list-item-title>
-                        <v-list-item-subtitle style="margin-left:10px;">+389 75 371 855</v-list-item-subtitle>
-                      </div>
-                    </v-list-item>
-
-                    <v-list-item style="max-width:1000px; border:1px solid black;" class="pa-5">
-                      <div class="d-flex align-center justify-center">
-                      <v-icon color="orange" class="mr-2">mdi-map-marker</v-icon>
-                      <v-list-item-title>{{ $t('contactInfo.address') }}</v-list-item-title>
-                      <v-list-item-subtitle style="margin-left:10px;">Ulica Belicica br: 136, Gostivar, 1230, Macedonia</v-list-item-subtitle>
-                      </div>
-                    </v-list-item>
-
-                    <v-list-item style="max-width:1000px; border:1px solid black;" class="pa-5">
-                      <div class="d-flex align-center justify-center">
-                      <v-icon color="orange" class="mr-2">mdi-instagram</v-icon>
-                      <v-list-item-title>{{ $t('instagram') }}</v-list-item-title>
-                      <v-list-item-subtitle style="margin-left:10px;">@3dcenteringgostivar</v-list-item-subtitle>
-                      </div>
-                    </v-list-item>
-                    <v-list-item style="max-width:1000px; border:1px solid black;" class="pa-5">
-                      <div class="d-flex align-center justify-center">
-                        <img
-                            :src="tiktok"
-                            width="20"
-                            height="20"
-                            class="tiktok-icon"
-                        />
-                        <v-list-item-title class="ml-1">TikTok</v-list-item-title>
-                      <v-list-item-subtitle style="margin-left:10px;">@3dcenteringgostivar</v-list-item-subtitle>
-                      </div>
-                    </v-list-item>
-
-                    <v-list-item style="max-width:1000px; border:1px solid black;" class="pa-5">
-                      <div class="d-flex align-center justify-center">
-                      <v-icon color="orange" class="mr-2">mdi-email</v-icon>
-                      <v-list-item-title>{{ $t('email') }}</v-list-item-title>
-                      <v-list-item-subtitle style="margin-left:10px;">3dautocentering@gmail.com</v-list-item-subtitle>
-                      </div>
-                    </v-list-item>
-
-                    <v-list-item style="max-width:1000px; border:1px solid black;" class="pa-5">
-                      <div class="d-flex align-center justify-center">
-                      <v-icon color="orange" class="mr-2">mdi-clock</v-icon>
-                      <v-list-item-title>{{ $t('contactInfo.workingHours') }}</v-list-item-title>
-                      <v-list-item-subtitle>{{ $t('contactInfo.monSat') }}</v-list-item-subtitle>
-                      <v-list-item-subtitle style="margin-left:10px;">{{ $t('contactInfo.sun') }}</v-list-item-subtitle>
-                      </div>
-                    </v-list-item>
+                    <template v-for="(item, index) in contactItems" :key="index">
+                      <v-list-item class="pa-5">
+                        <div class="d-flex align-center justify-space-between w-100">
+                          <div class="d-flex align-center" style="min-width: 200px;">
+                            <v-icon color="orange" class="mr-2">{{ item.icon }}</v-icon>
+                            <v-list-item-title class="font-weight-medium">{{ item.title }}</v-list-item-title>
+                          </div>
+                          <v-list-item-subtitle class="ml-3">{{ item.value }}</v-list-item-subtitle>
+                        </div>
+                      </v-list-item>
+                      <v-divider v-if="index !== contactItems.length - 1"></v-divider>
+                    </template>
                   </v-list>
                 </v-card>
               </div>
@@ -136,7 +95,14 @@ export default{
   data(){
     return{
       tiktok: Tiktok,
-
+      contactItems: [
+        { icon: 'mdi-account', title: this.$t('contactInfo.contactPerson'), value: 'Slagjan Nikolovski' },
+        { icon: 'mdi-phone', title: this.$t('contactInfo.phone'), value: '+389 75 371 855' },
+        { icon: 'mdi-map-marker', title: this.$t('contactInfo.address'), value: 'Ulica Belicica br: 136, Gostivar, 1230, Macedonia' },
+        { icon: 'mdi-instagram', title: this.$t('instagram'), value: '@3dcenteringgostivar' },
+        { icon: 'mdi-email', title: this.$t('email'), value: '3dautocentering@gmail.com' },
+        { icon: 'mdi-clock', title: this.$t('contactInfo.workingHours'), value: `${this.$t('contactInfo.monSat')} | ${this.$t('contactInfo.sun')}` }
+      ],
       siteBackground: background1,
     }
   },
@@ -220,6 +186,15 @@ export default{
   cursor: pointer;
   transition: filter 0.3s ease-in-out;
   filter: invert(47%) sepia(94%) saturate(664%) hue-rotate(1deg) brightness(101%) contrast(101%);
+}
+.v-list-item:hover{
+  transition:0.5s;
+}
+.transition-class:hover{
+  transition:0.5s;
+}
+.transition-class{
+  transition:0.5s;
 }
 
 </style>
