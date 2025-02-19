@@ -21,9 +21,9 @@ export default {
   data() {
     return {
       price: "/Images/3dCenteringPrices.svg",
-      priceMobileMacedonian: "/Images/MacedonianPricesSmall.svg",
-      priceMobileAlbanian: "/Images/AlbanianPricesSmall.svg",
-      priceMobileEnglish: "/Images/EnglishPricesSmall.svg",
+      priceMobileMacedonian: "/Images/MacedonianPricesSmall.webp",
+      priceMobileAlbanian: "/Images/AlbanianPricesSmall.webp",
+      priceMobileEnglish: "/Images/EnglishPricesSmall.webp",
       priceWebMacedonian: "/Images/MacedonianPriceBig.svg",
       priceWebEnglish: "/Images/EnglishPriceBig.svg",
       priceWebAlbanian: "/Images/AlbanianPriceBig.svg",
