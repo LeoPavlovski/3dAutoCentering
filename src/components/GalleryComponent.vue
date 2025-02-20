@@ -5,11 +5,14 @@
         cover
         class="full-screen-image"
     />
-    <v-card class="pa-3" style="background-color: transparent;">
+    <v-card
+        style="background-color: transparent;"
+        :style="$vuetify.display.lgAndUp ? 'padding: 50px; margin-top:30px;' : ''"
+    >
       <swiper
           :modules="[Autoplay, Navigation, Pagination]"
           :slides-per-view="1"
-          :space-between="20"
+          :space-between="10"
           :loop="true"
           :autoplay="{ delay: 3000, disableOnInteraction: false }"
           :navigation="true"
@@ -20,7 +23,12 @@
       }"
       >
         <swiper-slide v-for="image in images" :key="image.id">
-          <img :src="image.url" alt="Car Image" class="car-image"/>
+          <div style="border:10px solid white;">
+           <div style="margin:5px;">
+             <img :src="image.url" alt="Car Image" class="car-image"/>
+           </div>
+          </div>
+
         </swiper-slide>
       </swiper>
     </v-card>
@@ -64,18 +72,16 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: -50px;
+  margin-top:-60px;
 }
 
 .car-image {
   width: 100%;
   height: auto;
-  min-height: 600px;
   object-fit: contain;
   margin-top: 10px;
-  border-radius: 30px;
+  border-radius: 15px;
   transition: transform 0.5s ease-in-out, box-shadow 0.3s ease-in-out;
-
 }
 
 .car-image:hover {
