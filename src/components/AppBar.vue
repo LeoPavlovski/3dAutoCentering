@@ -198,6 +198,7 @@ export default {
     },
     changeLanguage(value) {
       this.$i18n.locale = value;
+      localStorage.setItem('language',value);
       this.loaderAnimation();
     },
     loaderAnimation () {

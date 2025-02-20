@@ -95,15 +95,19 @@ export default{
   data(){
     return{
       tiktok: Tiktok,
-      contactItems: [
+      siteBackground: background1,
+    }
+  },
+  computed:{
+    contactItems() {
+      return [
         { icon: 'mdi-account', title: this.$t('contactInfo.contactPerson'), value: 'Slagjan Nikolovski' },
         { icon: 'mdi-phone', title: this.$t('contactInfo.phone'), value: '+389 75 371 855' },
         { icon: 'mdi-map-marker', title: this.$t('contactInfo.address'), value: 'Ulica Belicica br: 136, Gostivar 1230 Macedonia' },
         { icon: 'mdi-instagram', title: this.$t('instagram'), value: '@3dcenteringgostivar' },
         { icon: 'mdi-email', title: this.$t('email'), value: '3dautocentering@gmail.com' },
         { icon: 'mdi-clock', title: this.$t('contactInfo.workingHours'), value: `${this.$t('contactInfo.monSat')} | ${this.$t('contactInfo.sun')}` }
-      ],
-      siteBackground: background1,
+      ];
     }
   },
   mounted(){
