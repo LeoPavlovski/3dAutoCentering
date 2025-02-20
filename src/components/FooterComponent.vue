@@ -1,35 +1,38 @@
 
 <template>
-  <v-footer v-if="!drawer" style="position:absolute;left:0;bottom:0; padding:0;margin:0; z-index:0; width:100%;">
-    <div class="bg-orange-accent-4  w-100 align-center d-flex">
-      <strong style="font-size:12px; padding-left:10px;">{{$t('socialMedia')}}!</strong>
-      <v-spacer></v-spacer>
-      <div v-if="this.$vuetify.display.mdAndUp" style="font-size:12.5px; margin-right: 100px">
-        <span>&copy;</span>
-        <span> 2025 - 3D Auto Centring Gostivar.</span>
-      </div>
+  <div style="position:fixed; bottom:0;left:0; background-color:white; width:100%;">
+    <p>TESTING FOOTER COMPONENT ON MOBILE DEVICES></p>
+  </div>
+<!--  <v-footer v-if="!drawer" style="position:absolute;left:0;bottom:0; padding:0;margin:0; z-index:0; width:100%;">-->
+<!--    <div class="bg-orange-accent-4  w-100 align-center d-flex">-->
+<!--      <strong style="font-size:12px; padding-left:10px;">{{$t('socialMedia')}}!</strong>-->
+<!--      <v-spacer></v-spacer>-->
+<!--      <div v-if="this.$vuetify.display.mdAndUp" style="font-size:12.5px; margin-right: 100px">-->
+<!--        <span>&copy;</span>-->
+<!--        <span> 2025 - 3D Auto Centring Gostivar.</span>-->
+<!--      </div>-->
 
-      <v-spacer></v-spacer>
-      <img
-          :src="tiktok"
-          width="20"
-          height="20"
-          class="tiktok-icon"
-          @click="redirectToTikTok"
-      />
+<!--      <v-spacer></v-spacer>-->
+<!--      <img-->
+<!--          :src="tiktok"-->
+<!--          width="20"-->
+<!--          height="20"-->
+<!--          class="tiktok-icon"-->
+<!--          @click="redirectToTikTok"-->
+<!--      />-->
 
-      <v-btn
-          v-for="icon in icons"
-          :key="icon"
-          :icon="icon"
-          class="mx-4"
-          variant="plain"
-          density="compact"
-          color="white"
-          @click="redirectToPage(icon)"
-      ></v-btn>
-    </div>
-  </v-footer>
+<!--      <v-btn-->
+<!--          v-for="icon in icons"-->
+<!--          :key="icon"-->
+<!--          :icon="icon"-->
+<!--          class="mx-4"-->
+<!--          variant="plain"-->
+<!--          density="compact"-->
+<!--          color="white"-->
+<!--          @click="redirectToPage(icon)"-->
+<!--      ></v-btn>-->
+<!--    </div>-->
+<!--  </v-footer>-->
 </template>
 
 <style scoped>
