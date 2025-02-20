@@ -53,7 +53,7 @@
               style="color: white;"
               class="pa-5 title1 text-start mr-auto"
           >
-            {{ $t('Contact Information') }}
+            {{ $t('ContactInformation') }}
           </h1>
           <v-col
               cols="12"
