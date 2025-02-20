@@ -65,13 +65,13 @@
                 <v-card height="500">
                   <v-list>
                     <template v-for="(item, index) in contactItems" :key="index">
-                      <v-list-item class="pa-5">
-                        <div class="d-flex align-center justify-space-between w-100">
-                          <div class="d-flex align-center" style="min-width: 200px;">
+                      <v-list-item style="height:80px;">
+                        <div class="box">
+                          <div class="d-flex align-center">
                             <v-icon color="orange" class="mr-2">{{ item.icon }}</v-icon>
-                            <v-list-item-title class="font-weight-medium">{{ item.title }}</v-list-item-title>
+                            <span  class="font-weight-medium">{{ item.title }}</span>
                           </div>
-                          <v-list-item-subtitle class="ml-3">{{ item.value }}</v-list-item-subtitle>
+                          <span  class="font-weight-light" :class="$vuetify.display.width >= 960 && $vuetify.display.width <=1350 ? 'pl-5' : ' '">{{ item.value }}</span>
                         </div>
                       </v-list-item>
                       <v-divider v-if="index !== contactItems.length - 1"></v-divider>
@@ -98,7 +98,7 @@ export default{
       contactItems: [
         { icon: 'mdi-account', title: this.$t('contactInfo.contactPerson'), value: 'Slagjan Nikolovski' },
         { icon: 'mdi-phone', title: this.$t('contactInfo.phone'), value: '+389 75 371 855' },
-        { icon: 'mdi-map-marker', title: this.$t('contactInfo.address'), value: 'Ulica Belicica br: 136, Gostivar, 1230, Macedonia' },
+        { icon: 'mdi-map-marker', title: this.$t('contactInfo.address'), value: 'Ulica Belicica br: 136, Gostivar 1230 Macedonia' },
         { icon: 'mdi-instagram', title: this.$t('instagram'), value: '@3dcenteringgostivar' },
         { icon: 'mdi-email', title: this.$t('email'), value: '3dautocentering@gmail.com' },
         { icon: 'mdi-clock', title: this.$t('contactInfo.workingHours'), value: `${this.$t('contactInfo.monSat')} | ${this.$t('contactInfo.sun')}` }
@@ -195,6 +195,22 @@ export default{
 }
 .transition-class{
   transition:0.5s;
+}
+.box{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+@media(max-width:450px){
+  .box{
+    display:block;
+    text-align:left;
+  }
+}
+@media(max-width:1024px){
+  .sub-text{
+
+  }
 }
 
 </style>
