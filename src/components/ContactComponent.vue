@@ -71,12 +71,14 @@
                             <v-icon v-if="item.icon !== 'tiktok'" color="orange" class="mr-2">
                               {{ item.icon }}
                             </v-icon>
-                            <v-img v-else :src="tiktok" alt="TikTok" class="mr-2 custom-icon" width="24" height="24" />
-                            <span class="font-weight-medium">{{ item.title }}</span>
+                            <div class="d-flex align-center">
+                              <v-img v-if="index === 4"  :src="tiktok" alt="TikTok" class="mr-2" width="24" height="24" />
+                              <span >{{ item.title }}</span>
+                            </div>
                           </div>
                           <span class="font-weight-light" :class="$vuetify.display.width >= 960 && $vuetify.display.width <=1350 ? 'pl-5' : ' '">
-            {{ item.value }}
-          </span>
+                             {{ item.value }}
+                          </span>
                         </div>
                       </v-list-item>
                       <v-divider v-if="index !== contactItems.length - 1"></v-divider>
