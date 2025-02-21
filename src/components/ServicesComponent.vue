@@ -11,8 +11,8 @@
       </h1>
       <v-row class="rows d-flex" style="height:80vh; overflow:auto;">
         <v-col :cols="$vuetify.display.smAndDown ? 12 : 4" :class="$vuetify.display.smAndDown ? 'pr-9' : ''">
-          <div style="border:6px solid white; margin-left:25px;">
-            <div style="margin:5px;">
+          <div style="border:6px solid white; margin-left:25px; display: flex; flex-direction: column; height: 100%;">
+            <div style="margin:5px; flex-grow: 1; display: flex; flex-direction: column;">
               <img
                   class="image"
                   src="https://img.freepik.com/free-photo/auto-mechanic-checking-car-engine_1303-14032.jpg"
@@ -28,8 +28,8 @@
         </v-col>
 
         <v-col :cols="$vuetify.display.smAndDown ? 12 : 4" :class="$vuetify.display.smAndDown ? 'pr-9 pl-9' : ''">
-          <div style="border:6px solid white;">
-            <div style="margin:5px;">
+          <div style="border:6px solid white; display: flex; flex-direction: column; height: 100%;">
+            <div style="margin:5px; flex-grow: 1; display: flex; flex-direction: column;">
               <img class="image" src="https://www.3dautocenter.com/uploads/7/2/7/0/72709373/auto-electrical-diagnostics_orig.jpg">
               <div class="container">
                 <h4 class="main-text" style="margin: 0 0 10px 0;">{{ $t('servicesDetails.alignment') }}</h4>
@@ -42,8 +42,8 @@
         </v-col>
 
         <v-col :cols="$vuetify.display.smAndDown ? 12 : 4" :class="$vuetify.display.smAndDown ? 'pr-9 pl-9' : ''">
-          <div style="border:6px solid white;">
-            <div style="margin:5px;">
+          <div style="border:6px solid white; display: flex; flex-direction: column; height: 100%;">
+            <div style="margin:5px; flex-grow: 1; display: flex; flex-direction: column;">
               <img
                   class="image"
                   src="https://roskillauto.co.nz/wp-content/uploads/2021/11/20211123_123348-1024x461.jpeg"
@@ -95,13 +95,23 @@ export default{
 }
 .container{
   border:4px solid white;
-  color: black; background-color: white; padding: 10px; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; width: 100%; max-width: 500px; height: 150px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); margin-top: 1px;
+  color: black; background-color: white;
+  padding: 10px; display: flex; flex-direction: column;
+  align-items: center; justify-content: center; text-align: center;
+  width: 100%; max-width: 500px; height: 250px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); margin-top: 1px;
+  overflow: auto;
+  flex-grow: 1;
 }
 .main-text{
   font-weight:700;
+  font-size:20px;
+  word-wrap: break-word;
+  margin: 0;
 }
 .description{
-  font-size:10px;
+  font-size:14px;
+  word-wrap: break-word;
+  text-align: center;
 }
 @media(max-width:3000px){
   .image{
@@ -120,10 +130,10 @@ export default{
     font-size:18px;
   }
   .image{
-    height:200px;
+    height:350px;
   }
   .container{
-    height:250px;
+    height:200px;
   }
 }
 @media(max-width:435px){
@@ -131,6 +141,9 @@ export default{
     font-size:25px;
   }
   .image{
+    height:250px;
+  }
+  .container{
     height:300px;
   }
 }
@@ -144,6 +157,9 @@ export default{
   }
   .image{
     height:200px;
+  }
+  .container{
+    height:auto; /* Let container adjust height based on content */
   }
 }
 </style>
