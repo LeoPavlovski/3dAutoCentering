@@ -71,7 +71,7 @@
                             <v-icon v-if="item.icon !== 'tiktok'" color="orange" class="mr-2">
                               {{ item.icon }}
                             </v-icon>
-                            <v-img v-else :src="tiktok" alt="TikTok" class="mr-2" width="24" height="24" />
+                            <v-img v-else :src="tiktok" alt="TikTok" class="mr-2 custom-icon" width="24" height="24" />
                             <span class="font-weight-medium">{{ item.title }}</span>
                           </div>
                           <span class="font-weight-light" :class="$vuetify.display.width >= 960 && $vuetify.display.width <=1350 ? 'pl-5' : ' '">
@@ -95,7 +95,7 @@
 </template>
 <script>
 import background1 from "../../public/Images/background1.webp";
-import Tiktok from '/public/Images/tiktok.svg'
+import Tiktok from '/public/Images/tiktokorange.svg'
 
 export default{
   data(){
@@ -239,5 +239,4 @@ export default{
 
   }
 }
-
 </style>
