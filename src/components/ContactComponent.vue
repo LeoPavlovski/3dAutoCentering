@@ -132,6 +132,14 @@ export default{
       if (item.icon === "mdi-map-marker") {
         window.open(location, "_blank");
       }
+      if (item.icon === "mdi-phone") {
+        if (/Mobi|Android|iPhone/i.test(navigator.userAgent)) {
+          // Opens phone dialer on mobile devices
+          window.location.href = `tel:${item.value}`;
+        } else {
+          alert("Calling is only available on mobile devices.");
+        }
+      }
     },
   },
 
