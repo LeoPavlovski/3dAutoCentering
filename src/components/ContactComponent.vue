@@ -65,19 +65,25 @@
                 <v-card height="500">
                   <v-list>
                     <template v-for="(item, index) in contactItems" :key="index">
-                      <v-list-item style="height:80px;">
+                      <v-list-item style="height:70px;" @click="redirectToPage(item)">
                         <div class="box">
                           <div class="d-flex align-center">
-                            <v-icon color="orange" class="mr-2">{{ item.icon }}</v-icon>
-                            <span  class="font-weight-medium">{{ item.title }}</span>
+                            <v-icon v-if="item.icon !== 'tiktok'" color="orange" class="mr-2">
+                              {{ item.icon }}
+                            </v-icon>
+                            <v-img v-else :src="tiktok" alt="TikTok" class="mr-2" width="24" height="24" />
+                            <span class="font-weight-medium">{{ item.title }}</span>
                           </div>
-                          <span  class="font-weight-light" :class="$vuetify.display.width >= 960 && $vuetify.display.width <=1350 ? 'pl-5' : ' '">{{ item.value }}</span>
+                          <span class="font-weight-light" :class="$vuetify.display.width >= 960 && $vuetify.display.width <=1350 ? 'pl-5' : ' '">
+            {{ item.value }}
+          </span>
                         </div>
                       </v-list-item>
                       <v-divider v-if="index !== contactItems.length - 1"></v-divider>
                     </template>
                   </v-list>
                 </v-card>
+
               </div>
             </div>
           </v-col>
@@ -105,13 +111,30 @@ export default{
         { icon: 'mdi-phone', title: this.$t('contactInfo.phone'), value: '+389 75 371 855' },
         { icon: 'mdi-map-marker', title: this.$t('contactInfo.address'), value: 'Ulica Belicica br: 136, Gostivar 1230 Macedonia' },
         { icon: 'mdi-instagram', title: this.$t('instagram'), value: '@3dcenteringgostivar' },
+        { icon: 'tiktok', title: 'TikTok', value: '@3dcenteringgostivar'},
         { icon: 'mdi-email', title: this.$t('email'), value: '3dautocentering@gmail.com' },
-        { icon: 'mdi-clock', title: this.$t('contactInfo.workingHours'), value: `${this.$t('contactInfo.monSat')} | ${this.$t('contactInfo.sun')}` }
+        { icon: 'mdi-clock', title: this.$t('contactInfo.workingHours'), value: `${this.$t('contactInfo.monSat')} | ${this.$t('contactInfo.sun')}` },
       ];
     }
   },
-  mounted(){
-  }
+  methods: {
+    redirectToPage(item) {
+      const instagramProfile = "https://www.instagram.com/3dcenteringgostivar/";
+      const tiktokProfile = "https://www.tiktok.com/@3dcenteringgostivar";
+      const location = "https://g.co/kgs/o47bXVv"
+
+      if (item.icon === "tiktok") {
+        window.open(tiktokProfile, "_blank");
+      }
+      if (item.icon === "mdi-instagram") {
+        window.open(instagramProfile, "_blank");
+      }
+      if (item.icon === "mdi-map-marker") {
+        window.open(location, "_blank");
+      }
+    },
+  },
+
 }
 </script>
 <style scoped>
