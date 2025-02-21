@@ -105,7 +105,7 @@
           :location="$vuetify.display.mobile ? 'bottom' : undefined"
           temporary
           absolute
-          style="height:100vh;"
+          style="height:100vh; opacity: 0.9"
       >
         <v-list height="400">
           <v-list-item
