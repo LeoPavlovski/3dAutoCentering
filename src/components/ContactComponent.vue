@@ -60,7 +60,7 @@
               md="5"
               class="d-flex justify-center"
           >
-            <div style="border: 6px solid white; width: 100%;">
+            <div style="border: 6px solid white; width: 100%; opacity: 0.9;">
               <div style="margin: 5px; height: 500px;">
                 <v-card height="500">
                   <v-list>
