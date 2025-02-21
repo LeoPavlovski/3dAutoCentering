@@ -33,7 +33,7 @@
               md="7"
               class="d-flex justify-center"
           >
-            <div style="border: 10px solid white; width: 100%;">
+            <div style="border: 6px solid white; width: 100%;">
               <div style="margin: 5px; height: 500px;">
                 <iframe
                     src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d743.7578677838892!2d20.9161448!3d41.7845354!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x135157fec01f9d99%3A0x936134c415411d2b!2s3D%20Auto%20Centering%20Gostivar!5e0!3m2!1sen!2smk!4v1739800715235!5m2!1sen!2smk"
@@ -60,7 +60,7 @@
               md="5"
               class="d-flex justify-center"
           >
-            <div style="border: 10px solid white; width: 100%;">
+            <div style="border: 6px solid white; width: 100%;">
               <div style="margin: 5px; height: 500px;">
                 <v-card height="500">
                   <v-list>

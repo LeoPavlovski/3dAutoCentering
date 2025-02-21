@@ -9,6 +9,7 @@
         style="background-color: transparent;"
         :style="$vuetify.display.lgAndUp ? 'padding: 50px; margin-top:30px;' : ''"
     >
+      <div style="border:6px solid white;">
       <swiper
           :modules="[Autoplay, Navigation, Pagination]"
           :slides-per-view="1"
@@ -23,14 +24,14 @@
       }"
       >
         <swiper-slide v-for="image in images" :key="image.id">
-          <div style="border:10px solid white;">
+
            <div style="margin:5px;">
              <img :src="image.url" alt="Car Image" class="car-image"/>
-           </div>
           </div>
 
         </swiper-slide>
       </swiper>
+        </div>
     </v-card>
   </div>
 </template>

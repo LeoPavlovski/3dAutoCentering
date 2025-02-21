@@ -11,7 +11,7 @@
       </h1>
       <v-row class="rows d-flex" style="height:80vh; overflow:auto;">
         <v-col :cols="$vuetify.display.smAndDown ? 12 : 4" :class="$vuetify.display.smAndDown ? 'pr-9' : ''">
-          <div style="border:10px solid white; margin-left:25px;">
+          <div style="border:6px solid white; margin-left:25px;">
             <div style="margin:5px;">
               <img
                   class="image"
@@ -28,7 +28,7 @@
         </v-col>
 
         <v-col :cols="$vuetify.display.smAndDown ? 12 : 4" :class="$vuetify.display.smAndDown ? 'pr-9 pl-9' : ''">
-          <div style="border:10px solid white;">
+          <div style="border:6px solid white;">
             <div style="margin:5px;">
               <img class="image" src="https://www.3dautocenter.com/uploads/7/2/7/0/72709373/auto-electrical-diagnostics_orig.jpg">
               <div class="container">
@@ -42,7 +42,7 @@
         </v-col>
 
         <v-col :cols="$vuetify.display.smAndDown ? 12 : 4" :class="$vuetify.display.smAndDown ? 'pr-9 pl-9' : ''">
-          <div style="border:10px solid white;">
+          <div style="border:6px solid white;">
             <div style="margin:5px;">
               <img
                   class="image"
