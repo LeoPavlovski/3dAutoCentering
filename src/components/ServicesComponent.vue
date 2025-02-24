@@ -9,9 +9,9 @@
       <h1 style="color:white;" class="pa-5 title1" :class="$vuetify.display.smAndDown? 'text-center' : 'text-left'">
         {{ $t('whatareweoffering') }}
       </h1>
-      <v-row class="rows d-flex mr-3" style="height:80vh; overflow:auto;">
-        <v-col :cols="$vuetify.display.smAndDown ? 12 : 4" :class="$vuetify.display.smAndDown ? 'pr-9' : ''">
-          <div style="border:6px solid white; margin-left:25px; display: flex; flex-direction: column; height: 100%;">
+      <v-row class="rows d-flex" style="height:80vh; overflow:auto;">
+        <v-col :cols="$vuetify.display.smAndDown ? 12 : 4" :class="$vuetify.display.smAndDown ? '' : ''">
+          <div style="border:6px solid white;  display: flex; flex-direction: column; height: 100%;">
             <div style="margin:5px; flex-grow: 1; display: flex; flex-direction: column;">
               <img
                   class="image"
@@ -27,7 +27,7 @@
           </div>
         </v-col>
 
-        <v-col :cols="$vuetify.display.smAndDown ? 12 : 4" :class="$vuetify.display.smAndDown ? 'pr-9 pl-9' : ''">
+        <v-col :cols="$vuetify.display.smAndDown ? 12 : 4" :class="$vuetify.display.smAndDown ? '' : ''">
           <div style="border:6px solid white; display: flex; flex-direction: column; height: 100%;">
             <div style="margin:5px; flex-grow: 1; display: flex; flex-direction: column;">
               <img class="image" src="https://www.3dautocenter.com/uploads/7/2/7/0/72709373/auto-electrical-diagnostics_orig.jpg">
@@ -41,7 +41,7 @@
           </div>
         </v-col>
 
-        <v-col :cols="$vuetify.display.smAndDown ? 12 : 4" :class="$vuetify.display.smAndDown ? 'pr-9 pl-9' : ''">
+        <v-col :cols="$vuetify.display.smAndDown ? 12 : 4" :class="$vuetify.display.smAndDown ? '' : ''">
           <div style="border:6px solid white; display: flex; flex-direction: column; height: 100%;">
             <div style="margin:5px; flex-grow: 1; display: flex; flex-direction: column;">
               <img
