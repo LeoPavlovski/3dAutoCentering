@@ -2,7 +2,7 @@
   <v-card class="elevation-0" style="border-radius:0px;">
     <v-layout height="100vh" width="100%">
 
-      <v-app-bar style="border-radius:0 !important; background:black;">
+      <v-app-bar style="border-radius:0 !important; background:black; position:fixed;top:0;left:0;right:0;">
 
         <v-app-bar-nav-icon color="white" variant="text" @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
         <div class="d-flex align-center justify-space-between" style="width:100%;">
@@ -105,7 +105,7 @@
           :location="$vuetify.display.mobile ? 'bottom' : undefined"
           temporary
           absolute
-          style="height:100vh;"
+          style="height:100vh; opacity: 0.9"
       >
         <v-list height="400">
           <v-list-item
@@ -198,6 +198,7 @@ export default {
     },
     changeLanguage(value) {
       this.$i18n.locale = value;
+      localStorage.setItem('language',value);
       this.loaderAnimation();
     },
     loaderAnimation () {

@@ -1,6 +1,9 @@
 
 <template>
-  <v-footer v-if="!drawer" style="position:absolute;left:0;bottom:0; padding:0;margin:0; z-index:0; width:100%;">
+<!--  <div style="position:fixed; bottom:0;left:0; background-color:white; width:100%;">-->
+<!--    <p>TESTING FOOTER COMPONENT ON MOBILE DEVICES></p>-->
+<!--  </div>-->
+  <v-footer v-if="!drawer" style="position:fixed;left:0;bottom:0; padding:0;margin:0; z-index:0; width:100%;">
     <div class="bg-orange-accent-4  w-100 align-center d-flex">
       <strong style="font-size:12px; padding-left:10px;">{{$t('socialMedia')}}!</strong>
       <v-spacer></v-spacer>
